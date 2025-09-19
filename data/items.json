@@ -65,7 +65,7 @@
   },
   {
     "title": "Catchin' up",
-    "description": "2004年の作品です。現状手元に元音源がなくYouTubeからの引用なので曲前にCMが流れてしまったらすみません。",
+    "description": "2004年の女性ヴォーカル作品です。現状手元に元音源がなくYouTubeからの引用なので曲前にCMが流れてしまったらすみません。",
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Girlrider.png",
     "audio": "",
     "url": "https://www.youtube.com/watch?v=52lf3aaZjv8",
@@ -73,11 +73,27 @@
   },
   {
     "title": "Must be on my way",
-    "description": "2009年の作品です。",
+    "description": "2009年の女性ヴォーカル作品です。",
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/FemaleSolitude.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/14434707.m4a",
     "url": "",
     "tags": ["music","femalevocal"]
+  },
+  {
+    "title": "猿",
+    "description": "2006年の作品です。こちらもリソースはYouTubeからの引用になります。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/FemaleSolitude.png",
+    "audio": "",
+    "url": "https://www.youtube.com/watch?v=GvBK0heudZI",
+    "tags": ["music","Rap"]
+  },
+  {
+    "title": "猿",
+    "description": "2006年の作品です。こちらもリソースはYouTubeからの引用になります。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/FemaleSolitude.png",
+    "audio": "",
+    "url": "https://www.youtube.com/watch?v=GvBK0heudZI",
+    "tags": ["music","Rap"]
   }
 ]
 
