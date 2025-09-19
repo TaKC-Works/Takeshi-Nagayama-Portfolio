@@ -1,0 +1,136 @@
+/* ベース */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* 横幅が広め */
+  gap: 1.5rem;
+}
+
+/* カード */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* サムネイル（横長） */
+.card .thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;       /* ← 横長比率 */
+  overflow: hidden;
+}
+
+.card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* メタ情報 */
+.card .meta {
+  padding: 0.8rem 1rem 0.5rem;
+}
+
+.card .title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0 0 0.3rem;
+}
+
+.card .desc {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0 0 0.5rem;
+}
+
+/* タグ */
+.card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.card .tag {
+  background: #eee;
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+}
+
+/* ボタン類 */
+.card .actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem 1rem;
+}
+
+.play-btn, .open-link {
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.play-btn {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+.open-link {
+  text-decoration: none;
+  color: #007bff;
+}
+
+/* 検索ボックス */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+#search {
+  flex: 1;
+  max-width: 300px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* モバイル対応 */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .card .title {
+    font-size: 1rem;
+  }
+
+  .card .desc {
+    font-size: 0.75rem;
+  }
+}
