@@ -5,7 +5,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Ciberpunkcity.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2500908_Distopia%20or%20Flontia.wav",
     "url": "",
-    "tags": ["music","demo"]
+    "tags": ["music","demo","composition"]
   },
   {
     "title": "If sky falls_DEMO",
@@ -13,7 +13,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Appointmentroad.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_EmotionalRock.wav",
     "url": "",
-    "tags": ["music","demo"]
+    "tags": ["music","demo","composition"]
   },
   {
     "title": "Mash up for tune up_DEMO",
@@ -21,7 +21,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Musiclabo.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250916_Mashed%20Sound.wav",
     "url": "",
-    "tags": ["music","demo"]
+    "tags": ["music","demo","composition"]
   },
   {
     "title": "Freeway combo＿DEMO",
@@ -29,7 +29,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Combo.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_MakeItEpicLater.wav",
     "url": "",
-    "tags": ["music","demo"]
+    "tags": ["music","demo","composition"]
   },
   {
     "title": "Duel preparation_DEMO",
@@ -37,7 +37,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Fantasy.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250919_Classical%20vibe.wav",
     "url": "",
-    "tags": ["music","demo"]
+    "tags": ["music","demo","composition"]
   },
   {
     "title": "Conduct to space",
@@ -45,7 +45,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/LV3.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2024_Conduct%20To%20Space_%E4%B8%89%E8%8F%B1%E9%87%8D%E5%B7%A5H3%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88YouTube%E9%85%8D%E4%BF%A1%E7%95%AA%E7%B5%84%E3%83%86%E3%83%BC%E3%83%9E%E6%9B%B2.wav",
     "url": "",
-    "tags": ["music"]
+    "tags": ["music","composition","sound,direction"]
   },
   {
     "title": "March of heavy industry",
@@ -53,7 +53,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/SpaceConstruction.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2024_%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88%E6%89%93%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%99YouTube%E9%85%8D%E4%BF%A1%E7%95%AA%E7%B5%84%E7%94%A8%E6%A5%BD%E6%9B%B2Demo1_.wav",
     "url": "",
-    "tags": ["music"]
+    "tags": ["music","composition"]
   },
   {
     "title": "Cosmic Reflection",
@@ -61,23 +61,15 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Bike.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2024_%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88%E6%89%93%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%99YouTube%E9%85%8D%E4%BF%A1%E7%95%AA%E7%B5%84%E7%94%A8%E6%A5%BD%E6%9B%B2Demo3.wav",
     "url": "",
-    "tags": ["music"]
+    "tags": ["music","composition"]
   },
   {
     "title": "Catchin' up",
-    "description": "2004年の女性ヴォーカル作品です。現状手元に元音源がなくYouTubeからの引用なので曲前にCMが流れてしまったらすみません。",
+    "description": "2004年の女性ヴォーカル作品です。現状手元に元音源がなくYouTubeからの引用なので曲前にCMが流れることをご容赦いただければ幸いです。",
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Girlrider.png",
     "audio": "",
     "url": "https://www.youtube.com/watch?v=52lf3aaZjv8",
-    "tags": ["music","female,vocal"]
-  },
-  {
-    "title": "Must be on my way",
-    "description": "2009年の女性ヴォーカル作品です。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/FemaleSolitude.png",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/14434707.m4a",
-    "url": "",
-    "tags": ["music","female,vocal"]
+    "tags": ["music","female,vocal","produce"]
   },
   {
     "title": "猿",
@@ -85,7 +77,15 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Hannya.png",
     "audio": "",
     "url": "https://www.youtube.com/watch?v=GvBK0heudZI",
-    "tags": ["music","Rap"]
+    "tags": ["music","Rap","produce"]
+  },
+    {
+    "title": "Must be on my way",
+    "description": "2009年の女性ヴォーカル作品です。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/FemaleSolitude.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/14434707.m4a",
+    "url": "",
+    "tags": ["music","female,vocal","produce"]
   },
   {
     "title": "Musium song",
@@ -93,7 +93,135 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/guitar.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/gutizumduo.wav",
     "url": "",
-    "tags": ["music","live,recording"]
+    "tags": ["music","live,recording","guitar,duo""featuring"]
+  },
+  {
+    "title": "Musium song",
+    "description": "",
+    "artwork": "",
+    "audio": "",
+    "url": "",
+    "tags": ["music"]
+  }, 
+  {
+    "title": "Musium song",
+    "description": "",
+    "artwork": "",
+    "audio": "",
+    "url": "",
+    "tags": ["music"]
+  },
+  {
+    "title": "Musium song",
+    "description": "",
+    "artwork": "",
+    "audio": "",
+    "url": "",
+    "tags": ["music"]
+  },
+  {
+    "title": "Musium song",
+    "description": "",
+    "artwork": "",
+    "audio": "",
+    "url": "",
+    "tags": ["music"]
+  }
+    {
+    "title": "Musium song",
+    "description": "",
+    "artwork": "",
+    "audio": "",
+    "url": "",
+    "tags": ["music"]
+  }, 
+  {
+    "title": "Musium song",
+    "description": "",
+    "artwork": "",
+    "audio": "",
+    "url": "",
+    "tags": ["music"]
+  },
+  {
+    "title": "Musium song",
+    "description": "",
+    "artwork": "",
+    "audio": "",
+    "url": "",
+    "tags": ["music"]
+  },
+  {
+    "title": "Musium song",
+    "description": "",
+    "artwork": "",
+    "audio": "",
+    "url": "",
+    "tags": ["music"]
+  }
+   {
+    "title": "Musium song",
+    "description": "",
+    "artwork": "",
+    "audio": "",
+    "url": "",
+    "tags": ["music"]
+  }, 
+  {
+    "title": "Musium song",
+    "description": "",
+    "artwork": "",
+    "audio": "",
+    "url": "",
+    "tags": ["music"]
+  },
+  {
+    "title": "Musium song",
+    "description": "",
+    "artwork": "",
+    "audio": "",
+    "url": "",
+    "tags": ["music"]
+  },
+  {
+    "title": "Musium song",
+    "description": "",
+    "artwork": "",
+    "audio": "",
+    "url": "",
+    "tags": ["music"]
+  }
+    {
+    "title": "Musium song",
+    "description": "",
+    "artwork": "",
+    "audio": "",
+    "url": "",
+    "tags": ["music"]
+  }, 
+  {
+    "title": "Musium song",
+    "description": "",
+    "artwork": "",
+    "audio": "",
+    "url": "",
+    "tags": ["music"]
+  },
+  {
+    "title": "Musium song",
+    "description": "",
+    "artwork": "",
+    "audio": "",
+    "url": "",
+    "tags": ["music"]
+  },
+  {
+    "title": "Musium song",
+    "description": "",
+    "artwork": "",
+    "audio": "",
+    "url": "",
+    "tags": ["music"]
   }
 ]
 
