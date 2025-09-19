@@ -2,8 +2,8 @@
   {
     "title": "Distopia or Flontia",
     "description": "Cloudflare R2から配信される音源",
-    "artwork": "assets/art/sample.png",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2500908_Distopia%20or%20Flontia.wav",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Duo.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_BeyondMajorAndMinor_Story.wav",
     "url": "",
     "tags": ["cdn","demo"]
   }
