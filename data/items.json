@@ -69,7 +69,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Girlrider.png",
     "audio": "",
     "url": "https://www.youtube.com/watch?v=52lf3aaZjv8",
-    "tags": ["music","femalevocal"]
+    "tags": ["music","female,vocal"]
   },
   {
     "title": "Must be on my way",
@@ -77,23 +77,23 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/FemaleSolitude.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/14434707.m4a",
     "url": "",
-    "tags": ["music","femalevocal"]
+    "tags": ["music","female,vocal"]
   },
   {
     "title": "猿",
     "description": "2006年の作品です。こちらもリソースはYouTubeからの引用になります。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/FemaleSolitude.png",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Hannya.png",
     "audio": "",
     "url": "https://www.youtube.com/watch?v=GvBK0heudZI",
     "tags": ["music","Rap"]
   },
   {
-    "title": "猿",
-    "description": "2006年の作品です。こちらもリソースはYouTubeからの引用になります。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/FemaleSolitude.png",
-    "audio": "",
-    "url": "https://www.youtube.com/watch?v=GvBK0heudZI",
-    "tags": ["music","Rap"]
+    "title": "Musium song",
+    "description": "20012年の吉田智のアルバムにフィーチャリングされた時の録音です。テーマと先行ソロが私です。1発録りいたしました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/guitar.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/gutizumduo.wav",
+    "url": "",
+    "tags": ["music","live,recording"]
   }
 ]
 
