@@ -93,31 +93,6 @@ if (item.video && String(item.video).trim()) {
     showErr(map[err.code] || `code=${err.code}`);
   });
 }
-
-  // ★ poster は既に決めた artworkSrc を使う（404回避）
-  if (artworkSrc) video.setAttribute('poster', artworkSrc);
-
-  // ★ 画像は非表示（重なり防止）
-  img.hidden = true;
-
-  // ★ 事前にメタデータを取りに行く（Networkに出る）
-  video.preload = 'metadata';
-  video.load();
-
-  // audio系UIは不要
-  btn.hidden = true;
-
-  // ★ エラー時の原因確認用ログ
-  video.addEventListener('error', () => {
-    const err = video.error;
-    console.error('VIDEO ERROR code=', err && err.code, err);
-  });
-
-  // 同時再生防止
-  video.addEventListener('play', () => {
-    pauseAllMedia();
-  });
-}
       else if (item.audio && String(item.audio).trim()) {
         // 従来のオーディオ表示
         audio.src = item.audio;
@@ -166,6 +141,7 @@ if (item.video && String(item.video).trim()) {
 
   render(items);
 })();
+
 
 
 
