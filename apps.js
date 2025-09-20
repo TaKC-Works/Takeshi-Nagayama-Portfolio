@@ -16,6 +16,12 @@
     return;
   }
 
+  // 他のaudio/videoを止めるユーティリティ
+  function pauseAllMedia() {
+    document.querySelectorAll('audio').forEach(a => { if (!a.paused) a.pause(); });
+    document.querySelectorAll('video').forEach(v => { if (!v.paused) v.pause(); });
+  }
+
   // 2) レンダリング
   function render(list) {
     grid.innerHTML = '';
@@ -23,25 +29,31 @@
       grid.innerHTML = '<p>データが見つかりません。</p>';
       return;
     }
+
     list.forEach(item => {
       const node = tpl.content.cloneNode(true);
-      const img = node.querySelector('img');
-      const title = node.querySelector('.title');
-      const desc = node.querySelector('.desc');
-      const tags = node.querySelector('.tags');
+
+      // 要素取得
+      const img   = node.querySelector('img');
+      const video = node.querySelector('.video');      // ★ 追加：video
       const audio = node.querySelector('audio');
-      const btn = node.querySelector('.play-btn');
-      const link = node.querySelector('.open-link');
+      const title = node.querySelector('.title');
+      const desc  = node.querySelector('.desc');
+      const tags  = node.querySelector('.tags');
+      const btn   = node.querySelector('.play-btn');
+      const link  = node.querySelector('.open-link');
 
+      // テキスト
       title.textContent = item.title || '';
-      desc.textContent = item.description || '';
+      desc.textContent  = item.description || '';
 
-      if (item.artwork) {
-        img.src = item.artwork;
-      } else {
-        img.remove(); // サムネ無ければ枠ごと省略
-      }
+      // サムネ（fallback運用）
+      const fallback = 'assets/art/sample1.png';
+      const artworkSrc = (item.artwork && item.artwork.trim()) ? item.artwork : fallback;
+      img.src = artworkSrc;
+      img.alt = (item.title || 'artwork');
 
+      // タグ
       if (Array.isArray(item.tags)) {
         item.tags.forEach(t => {
           const s = document.createElement('span');
@@ -51,16 +63,50 @@
         });
       }
 
-      if (item.audio) {
-        audio.src = item.audio;
-        btn.hidden = false;
-        btn.addEventListener('click', () => {
-          if (audio.paused) { audio.play(); btn.textContent = '⏸ 停止'; }
-          else { audio.pause(); btn.textContent = '▶︎ 再生'; }
+      // ▼▼ メディア分岐：video があれば最優先で表示
+      if (item.video && String(item.video).trim()) {
+        // video表示・初期化
+        video.hidden = false;
+        video.src = item.video;
+        // artwork をポスター扱い（あれば）
+        if (item.artwork && item.artwork.trim()) {
+          video.setAttribute('poster', item.artwork);
+        }
+        // 画像は重なり回避のため非表示（CSSで[hidden]{display:none})
+        img.hidden = true;
+
+        // audio系UIは不要
+        btn.hidden = true;
+
+        // 同時再生防止
+        video.addEventListener('play', () => {
+          pauseAllMedia();
         });
       }
+      else if (item.audio && String(item.audio).trim()) {
+        // 従来のオーディオ表示
+        audio.src = item.audio;
+        btn.hidden = false;
 
-      if (item.url) {
+        btn.addEventListener('click', () => {
+          if (audio.paused) {
+            pauseAllMedia();
+            audio.play();
+            btn.textContent = '⏸ 停止';
+          } else {
+            audio.pause();
+            btn.textContent = '▶︎ 再生';
+          }
+        });
+        audio.addEventListener('pause', () => { btn.textContent = '▶︎ 再生'; });
+        audio.addEventListener('ended', () => { btn.textContent = '▶︎ 再生'; });
+      } else {
+        // どちらもない場合は再生ボタン非表示
+        btn.hidden = true;
+      }
+
+      // 外部リンク
+      if (item.url && String(item.url).trim()) {
         link.hidden = false;
         link.href = item.url;
         link.textContent = '外部リンク';
