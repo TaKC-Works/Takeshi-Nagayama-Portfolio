@@ -1,7 +1,7 @@
 [
   {
     "title": "Distopia or Frontia_DEMO",
-    "description": "最近のデモ作品です。未来都市をイメージしたアクション系コンテンツのオープニングからチュートリアルを想定いたしました。",
+    "description": "未来都市をイメージしたアクション系コンテンツのオープニングからチュートリアルを想定いたしました。",
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Ciberpunkcity.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2500908_Distopia%20or%20Flontia.wav",
     "url": "",
@@ -48,95 +48,7 @@
   "url": "",
   "tags": ["video","showreel"]
 },
-  {
-    "title": "Conduct to space",
-    "description": "2025年秋から配信開始予定の三菱重工H3ロケット打ち上げ配信YouTube番組テーマ曲です。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/LV3.png",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2024_Conduct%20To%20Space_%E4%B8%89%E8%8F%B1%E9%87%8D%E5%B7%A5H3%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88YouTube%E9%85%8D%E4%BF%A1%E7%95%AA%E7%B5%84%E3%83%86%E3%83%BC%E3%83%9E%E6%9B%B2.wav",
-    "url": "",
-    "tags": ["music","orchestra","composition","sound,direction"]
-  },
-  {
-    "title": "March of heavy industry",
-    "description": "宇宙開発をテーマにオーケストラ音源を構築いたしました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/SpaceConstruction.png",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2024_%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88%E6%89%93%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%99YouTube%E9%85%8D%E4%BF%A1%E7%95%AA%E7%B5%84%E7%94%A8%E6%A5%BD%E6%9B%B2Demo1_.wav",
-    "url": "",
-    "tags": ["music","orchestra","game","composition"]
-  },
-  {
-    "title": "Cosmic Reflection",
-    "description": "宇宙空間を想起させることをテーマに万華鏡的な多次元を表現いたしました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Bike.png",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2024_%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88%E6%89%93%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%99YouTube%E9%85%8D%E4%BF%A1%E7%95%AA%E7%B5%84%E7%94%A8%E6%A5%BD%E6%9B%B2Demo3.wav",
-    "url": "",
-    "tags": ["music","jazz","electronica","game","composition"]
-  },
-  {
-    "title": "Catchin' up",
-    "description": "2004年の女性ヴォーカル作品です。現状手元に元音源がなくYouTubeからの引用なので曲前にCMが流れることをご容赦いただければ幸いです。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Girlrider.png",
-    "audio": "",
-    "url": "https://www.youtube.com/watch?v=52lf3aaZjv8",
-    "tags": ["music","band,sound","female,vocal","produce"]
-  },
-  {
-    "title": "猿",
-    "description": "2006年の作品です。こちらもリソースはYouTubeからの引用になります。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Hannya.png",
-    "audio": "",
-    "url": "https://www.youtube.com/watch?v=GvBK0heudZI",
-    "tags": ["music","Rap","produce"]
-  },
-  {
-    "title": "Must be on my way",
-    "description": "2009年の女性ヴォーカル作品です。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/FemaleSolitude.png",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/14434707.m4a",
-    "url": "",
-    "tags": ["music","organic,soul","female,vocal","produce"]
-  },
-  {
-    "title": "Musium song",
-    "description": "20012年の吉田智のアルバムにフィーチャリングされた時の録音です。テーマと先行ソロが私です。1発録りいたしました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/guitar.png",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/gutizumduo.wav",
-    "url": "",
-    "tags": ["music","jazz","live,recording","guitar,duo","featuring"]
-  },
-  {
-    "title": "某社ロゴジングル",
-    "description": "2020年、某社ロゴジングルを制作いたしました。細かなパーティクルがうろこ状に会社ロゴを形成し、弾けて正式なロゴが現れるというCG演出にシンクロさせました。",
-    "artwork": "",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2020_%E3%83%AD%E3%82%B3%E3%82%99%E3%82%B7%E3%82%99%E3%83%B3%E3%82%AF%E3%82%99%E3%83%AB.wav",
-    "url": "",
-    "tags": ["music","logo","jingle"]
-  }, 
-  {
-    "title": "某社記念式典用社歌アレンジ",
-    "description": "2025年の某社創業祭オープニング音源として社歌をアレンジさせていただきました。",
-    "artwork": "",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250203_%E5%89%B5%E6%A5%AD%E7%A5%AD%E6%B4%BB%E6%80%A7%E7%A4%BE%E6%AD%8C_OP_Final2mix.wav",
-    "url": "",
-    "tags": ["music","orchestra","celebration"]
-  },
-  {
-    "title": "Spin a bill_DEMO",
-    "description": "ノスタルジックなソウルシティポップを意識いたしました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/MaleSolitude.png",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_MaleVocal_StoryOfUrbansoul.wav",
-    "url": "",
-    "tags": ["music","city,pop","retro","game"]
-  },
-  {
-    "title": "Duel of headhunters_DEMO",
-    "description": "ハービーハンコックのエレクトリックバンドをネオ化してゲーム音楽としてまとめることを意識いたしました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Femaledrummer.png",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Quest2.wav",
-    "url": "",
-    "tags": ["music","synthsizer","game"]
-  },
-  {
+    {
     "title": "インタラクティブミュージック（モチーフ）_DEMO",
     "description": "",
     "artwork": "",
@@ -167,6 +79,94 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_BeyondMajorAndMinor_Story.wav",
     "url": "",
     "tags": ["music","game"]
+  },
+  {
+    "title": "Conduct to space",
+    "description": "2025年秋から配信開始予定の三菱重工H3ロケット打ち上げ配信YouTube番組テーマ曲です。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/LV3.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2024_Conduct%20To%20Space_%E4%B8%89%E8%8F%B1%E9%87%8D%E5%B7%A5H3%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88YouTube%E9%85%8D%E4%BF%A1%E7%95%AA%E7%B5%84%E3%83%86%E3%83%BC%E3%83%9E%E6%9B%B2.wav",
+    "url": "",
+    "tags": ["music","orchestra","composition","sound,direction"]
+  },
+  {
+    "title": "March of heavy industry",
+    "description": "宇宙開発をテーマにオーケストラ音源を構築いたしました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/SpaceConstruction.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2024_%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88%E6%89%93%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%99YouTube%E9%85%8D%E4%BF%A1%E7%95%AA%E7%B5%84%E7%94%A8%E6%A5%BD%E6%9B%B2Demo1_.wav",
+    "url": "",
+    "tags": ["music","orchestra","game","composition"]
+  },
+  {
+    "title": "Cosmic Reflection",
+    "description": "宇宙空間を想起させることをテーマに万華鏡的な多次元を表現いたしました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Bike.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2024_%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88%E6%89%93%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%99YouTube%E9%85%8D%E4%BF%A1%E7%95%AA%E7%B5%84%E7%94%A8%E6%A5%BD%E6%9B%B2Demo3.wav",
+    "url": "",
+    "tags": ["music","jazz","electronica","game","composition"]
+  },
+  {
+    "title": "Catchin' up",
+    "description": "2004年に立ち上げたバンド・女性ヴォーカル作品です。現状手元に元音源がなくYouTubeからの引用なので曲前にCMが流れることをご容赦いただければ幸いです。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Girlrider.png",
+    "audio": "",
+    "url": "https://www.youtube.com/watch?v=52lf3aaZjv8",
+    "tags": ["music","band,sound","female,vocal","produce"]
+  },
+  {
+    "title": "猿",
+    "description": "2006年、フリースタイルダンジョンの元ラスボス、般若への楽曲提供作品です。こちらもリソースはYouTubeからの引用になります。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Hannya.png",
+    "audio": "",
+    "url": "https://www.youtube.com/watch?v=GvBK0heudZI",
+    "tags": ["music","Rap","produce"]
+  },
+  {
+    "title": "Must be on my way",
+    "description": "2009年、シンガーKeycoへの楽曲提供作品です。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/FemaleSolitude.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/14434707.m4a",
+    "url": "",
+    "tags": ["music","organic,soul","female,vocal","produce"]
+  },
+  {
+    "title": "Musium song",
+    "description": "20012年、ギタリスト吉田智のアルバムにフィーチャリングされた時の録音です。テーマと先行ソロが私です。1発録りいたしました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/guitar.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/gutizumduo.wav",
+    "url": "",
+    "tags": ["music","jazz","live,recording","guitar,duo","featuring"]
+  },
+  {
+    "title": "某社記念式典用社歌アレンジ",
+    "description": "2025年の某社創業祭オープニング音源として社歌をアレンジさせていただきました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Maestro.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250203_%E5%89%B5%E6%A5%AD%E7%A5%AD%E6%B4%BB%E6%80%A7%E7%A4%BE%E6%AD%8C_OP_Final2mix.wav",
+    "url": "",
+    "tags": ["music","orchestra","celebration"]
+  },
+  {
+    "title": "某社ロゴジングル",
+    "description": "2020年、某社ロゴジングルを制作いたしました。細かなパーティクルがうろこ状に会社ロゴを形成し、弾けて正式なロゴが現れるというCG演出にシンクロさせました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Jacketofmuso.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2020_%E3%83%AD%E3%82%B3%E3%82%99%E3%82%B7%E3%82%99%E3%83%B3%E3%82%AF%E3%82%99%E3%83%AB.wav",
+    "url": "",
+    "tags": ["music","sound,designe","logo","jingle"]
+  }, 
+  {
+    "title": "Spin a bill_DEMO",
+    "description": "ノスタルジックなソウルシティポップを意識いたしました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/MaleSolitude.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_MaleVocal_StoryOfUrbansoul.wav",
+    "url": "",
+    "tags": ["music","city,pop","soul","retro","game"]
+  },
+  {
+    "title": "Duel of headhunters_DEMO",
+    "description": "ハービーハンコックのエレクトリックバンドをネオ化してゲーム音楽としてまとめることを意識いたしました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Femaledrummer.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Quest2.wav",
+    "url": "",
+    "tags": ["music","synthsizer","game"]
   },
   {
     "title": "トライコア様案件_DEMO",
