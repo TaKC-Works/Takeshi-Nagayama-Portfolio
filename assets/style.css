@@ -101,14 +101,15 @@ body {
 /* クリック操作はJS側（.play-overlay に click listener） */
 .play-overlay {
   position: absolute;
-  inset: 0;                        /* サムネ全体を覆う */
+  inset: 0;
   display: grid;
   place-items: center;
-  background: rgba(0,0,0,0.18);    /* うっすら暗く */
+  background: rgba(0,0,0,0.18);
   opacity: 1;
   transition: opacity .18s ease;
   cursor: pointer;
   pointer-events: auto;
+  z-index: 2; /* ← 追加して前面に */
 }
 
 /* 再生中は薄く消える（JSが .hidden を付与/除去） */
