@@ -6,6 +6,7 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2500908_Distopia%20or%20Flontia.wav",
     "url": "",
     "tags": ["music","breakbeats","demo","game","composition"]
+    "focus": "center bottom"  
   },
   {
     "title": "If sky falls_DEMO",
@@ -22,6 +23,7 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250916_Mashed%20Sound.wav",
     "url": "",
     "tags": ["music","beatmash","demo","game","composition"]
+    "focus": "center bottom"  
   },
   {
     "title": "Freeway combo＿DEMO",
@@ -30,6 +32,7 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_MakeItEpicLater.wav",
     "url": "",
     "tags": ["music","jazz","demo","game","composition"]
+    "focus": "center bottom"  
   },
   {
     "title": "Duel preparation_DEMO",
@@ -127,6 +130,7 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/BattleParty.wav",
     "url": "",
     "tags": ["music","Halloween","rock","game"]
+    "focus": "center top"  
   },
   {
     "title": "Duel of headhunters_DEMO",
@@ -151,6 +155,7 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Raiza%20Biza%20Track%2003.wav",
     "url": "",
     "tags": ["music","hiphop","rap","recording"]
+    "focus": "center top"  
   }, 
   {
     "title": "Catchin' up",
