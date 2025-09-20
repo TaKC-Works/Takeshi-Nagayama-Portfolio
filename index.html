@@ -33,6 +33,8 @@
     <article class="card">
       <div class="thumb">
         <img alt="artwork" loading="lazy">
+        <!-- ▼ 動画はthumbの中に置く：CSS/hidden切替が効く -->
+        <video class="video" controls preload="none" playsinline hidden></video>
       </div>
       <div class="meta">
         <h3 class="title"></h3>
@@ -43,11 +45,11 @@
         <button class="play-btn" hidden>▶︎ 再生</button>
         <a class="open-link" target="_blank" rel="noopener" hidden>外部リンク</a>
       </div>
-      <video class="video" controls preload="none" playsinline hidden></video>
       <audio preload="none"></audio>
     </article>
   </template>
 
- <script src="apps.js" defer></script>
+  <!-- ▼ パス修正：apps.js → assets/app.js -->
+  <script src="assets/app.js" defer></script>
 </body>
 </html>
