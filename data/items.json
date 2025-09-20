@@ -175,6 +175,14 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/14434707.m4a",
     "url": "",
     "tags": ["music","organic,soul","female,vocal","produce"]
+  }, 
+  {
+    "title": "Spin a bill_DEMO",
+    "description": "ノスタルジックなソウルシティポップを意識いたしました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/MaleSolitude.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_MaleVocal_StoryOfUrbansoul.wav",
+    "url": "",
+    "tags": ["music","city,pop","soul","retro","game"]
   },
   {
     "title": "Musium song",
@@ -183,14 +191,6 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/gutizumduo.wav",
     "url": "",
     "tags": ["music","jazz","live,recording","guitar,duo","featuring"]
-  },
-  {
-    "title": "Spin a bill_DEMO",
-    "description": "ノスタルジックなソウルシティポップを意識いたしました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/MaleSolitude.png",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_MaleVocal_StoryOfUrbansoul.wav",
-    "url": "",
-    "tags": ["music","city,pop","soul","retro","game"]
   },
   {
     "title": "某社記念式典用社歌アレンジ",
