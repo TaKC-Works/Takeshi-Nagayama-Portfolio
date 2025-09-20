@@ -112,10 +112,12 @@ body {
   z-index: 2; /* ← 追加して前面に */
 }
 
-/* 再生中は薄く消える（JSが .hidden を付与/除去） */
-.play-overlay.hidden {
+/* 再生中は透明化（クリックは可能） */
+.play-overlay.playing {
+  background: transparent;
+}
+.play-overlay.playing .badge {
   opacity: 0;
-  pointer-events: none;
 }
 
 /* 中央の丸バッジ（小さめ） */
