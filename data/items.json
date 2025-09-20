@@ -14,7 +14,7 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_EmotionalRock.wav",
     "url": "",
     "tags": ["music","rock","demo","game","composition"]
-},
+  },
   {
     "title": "Mash up for tune up_DEMO",
     "description": "現状をマッシュアップしながらフォーカスを合わせていくようなストーリーを想定いたしました。",
@@ -55,7 +55,7 @@
   "audio": "",
   "url": "",
   "tags": ["video","showreel"]
-  },
+},
   {
     "title": "March of heavy industry",
     "description": "宇宙開発をテーマにオーケストラ音源を構築いたしました。",
