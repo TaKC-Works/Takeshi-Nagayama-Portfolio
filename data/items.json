@@ -51,7 +51,7 @@
     {
     "title": "インタラクティブミュージック  （モチーフ）_DEMO",
     "description": "インタラクティブミュージックのためのコードのみを書き出しました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Streetband.png",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Frontiasky.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story1-0.wav",
     "url": "",
     "tags": ["music","intaractive,music","piano,riff","game"]
@@ -59,7 +59,7 @@
   {
     "title": "インタラクティブミュージック  （展開1）_DEMO",
     "description": "（モチーフ）を展開して楽曲を作成いたしました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Streetband.png",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Frontiasky.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story1-2.wav",
     "url": "",
     "tags": ["music","intaractive,music","game"]
@@ -67,7 +67,7 @@
   {
     "title": "インタラクティブミュージック  （展開2）_DEMO",
     "description": "（モチーフ）を展開して楽曲を作成いたしました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Streetband.png",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Frontiasky.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/BossBattle%20%EF%BC%88%E8%B2%A0%E3%81%91%E3%81%9D%E3%81%86%EF%BC%89.wav",
     "url": "",
     "tags": ["music","intaractive,music","game"]
@@ -99,7 +99,7 @@
     {
     "title": "Scinario mode_DEMO",
     "description": "",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Stempunkprofessor.png",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Streetband.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story2-1.wav",
     "url": "",
     "tags": ["music","game"]
@@ -107,7 +107,7 @@
   {
     "title": "Scinario mode(remix1)_DEMO",
     "description": "",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Stempunkprofessor.png",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Streetband.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story2-2.wav",
     "url": "",
     "tags": ["music","game"]
@@ -115,7 +115,7 @@
   {
     "title": "Scinario mode(remix2)_DEMO",
     "description": "マイナーコード進行に対してできるだけメジャーコードのテンションを投影したフレーズを引用いたしました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Stempunkprofessor.png",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Streetband.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_BeyondMajorAndMinor_Story.wav",
     "url": "",
     "tags": ["music","intaractive,music","game"]
