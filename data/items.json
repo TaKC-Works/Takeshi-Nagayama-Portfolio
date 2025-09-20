@@ -203,7 +203,8 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Maestro.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250203_%E5%89%B5%E6%A5%AD%E7%A5%AD%E6%B4%BB%E6%80%A7%E7%A4%BE%E6%AD%8C_OP_Final2mix.wav",
     "url": "",
-    "tags": ["music","orchestra","celebration","arrangement"]
+    "tags": ["music","orchestra","celebration","arrangement"],
+     "focus": "center bottom"
   },
   {
     "title": "某社ロゴジングル",
