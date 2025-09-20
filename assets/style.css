@@ -97,96 +97,90 @@ body {
   border-radius: 4px;
 }
 
-/* ========== Overlay (薄い全面+中央に小さめアイコン) ========== */
-/* クリック操作はJS側（.play-overlay に click listener） */
+/* ========== Overlay ========== */
 .play-overlay {
   position: absolute;
   inset: 0;
   display: grid;
   place-items: center;
-  background: rgba(0,0,0,0.18);
+  background: rgba(0,0,0,0.15);
   opacity: 1;
   transition: opacity .18s ease;
   cursor: pointer;
   pointer-events: auto;
-  z-index: 2; /* ← 追加して前面に */
+  z-index: 2;
 }
-
-/* 再生中は透明化（クリックは可能） */
-.play-overlay.playing {
-  background: transparent;
-}
-.play-overlay.playing .badge {
+.play-overlay.hidden {
   opacity: 0;
+  pointer-events: none;
 }
 
-/* 中央の丸バッジ（小さめ） */
+/* 中央バッジ（小さめ・ミニマル） */
 .play-overlay .badge {
-  display: inline-grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 9999px;
-  background: rgba(0,0,0,0.55);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-  position: relative;
-  user-select: none;
-}
-
-/* ▶︎（video）SVG風の三角形 */
-.play-overlay.is-video .badge::before {
-  content: "";
-  position: absolute;
-  width: 0; height: 0;
-  border-left: 14px solid #fff;
-  border-top: 9px solid transparent;
-  border-bottom: 9px solid transparent;
-  margin-left: 3px; /* 見た目の中央補正 */
-}
-
-/* 🎧（audio）スリム版 */
-.play-overlay.is-audio .badge::before,
-.play-overlay.is-audio .badge::after {
-  content: "";
-  position: absolute;
-  border: 2px solid #fff;   /* ← 太さを 3px → 2px に変更 */
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
+  background: rgba(0,0,0,0.6);
+  transition: background .2s ease, transform .2s ease;
+}
+.play-overlay .badge:hover {
+  background: rgba(0,0,0,0.8);
+  transform: scale(1.05);
 }
 
-.play-overlay.is-audio .badge::before {  /* アーチ部分 */
-  width: 18px; height: 18px;  /* ← 小さめに */
-  top: 13px; left: 13px;      /* ← バッジ中央に調整 */
-  border-bottom: none;
+/* ▶︎ 再生アイコン */
+.play-overlay.is-video .badge::before,
+.play-overlay.is-audio .badge::before {
+  content: "";
+  display: block;
+  width: 0; height: 0;
+  border-left: 12px solid #fff;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  margin-left: 2px;
+  transition: all 0.25s ease;
 }
 
-.play-overlay.is-audio .badge::after {   /* イヤーパッド */
-  width: 4px; height: 10px;   /* ← 細めに */
-  top: 20px; left: 11px;      /* ← 中央寄せ */
-  border-radius: 2px;
+/* ⏸ 一時停止アイコン（再生中に切替） */
+.play-overlay.playing.is-video .badge::before,
+.play-overlay.playing.is-audio .badge::before,
+.play-overlay.playing.is-video .badge::after,
+.play-overlay.playing.is-audio .badge::after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 14px;
   background: #fff;
-  box-shadow: 20px 0 0 #fff;  /* ← 間隔を少し狭める */
+  transition: all 0.25s ease;
 }
+.play-overlay.playing.is-video .badge::before,
+.play-overlay.playing.is-audio .badge::before { margin-left: -6px; }
+.play-overlay.playing.is-video .badge::after,
+.play-overlay.playing.is-audio .badge::after { margin-left: 6px; }
 
-/* 🔗（link）鎖のイメージ */
+/* 🔗 リンクアイコン（崩さない） */
 .play-overlay.is-link .badge::before,
 .play-overlay.is-link .badge::after {
   content: "";
   position: absolute;
-  border: 3px solid #fff;
-  border-radius: 4px;
+  border: 2px solid #fff;
+  border-radius: 3px;
 }
 .play-overlay.is-link .badge::before {
-  width: 16px; height: 6px;
+  width: 12px; height: 5px;
   transform: rotate(-30deg);
 }
 .play-overlay.is-link .badge::after {
-  width: 16px; height: 6px;
+  width: 12px; height: 5px;
   transform: rotate(30deg);
 }
 
-/* hover時は少し濃くして押せる感 */
+/* hover時 */
 .card .thumb:hover .play-overlay:not(.hidden) {
-  background: rgba(0,0,0,0.26);
+  background: rgba(0,0,0,0.22);
 }
 
 /* キーボード操作に備えて focus-visible の視認性も追加（任意） */
