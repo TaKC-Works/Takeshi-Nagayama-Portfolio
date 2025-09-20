@@ -194,8 +194,30 @@ body {
   .grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
   .card .title { font-size: 1rem; }
   .card .desc { font-size: 0.75rem; }
-  .play-overlay .badge { width: 40px; height: 40px; }
-  .play-overlay.is-video .badge::before {
-    border-left-width: 12px; border-top-width: 8px; border-bottom-width: 8px;
+
+  /* モバイルはさらに小さめ（32px） */
+  .play-overlay .badge { width: 32px; height: 32px; }
+
+  /* 再生アイコン（三角）も少しだけ縮小 */
+  .play-overlay.is-video .badge::before,
+  .play-overlay.is-audio .badge::before {
+    border-left-width: 10px;
+    border-top-width: 6px;
+    border-bottom-width: 6px;
+    margin-left: 1px; /* 視覚中央を微調整 */
   }
+
+  /* 再生中の一時停止（縦棒2本）もバランス調整 */
+  .play-overlay.playing.is-video .badge::before,
+  .play-overlay.playing.is-audio .badge::before,
+  .play-overlay.playing.is-video .badge::after,
+  .play-overlay.playing.is-audio .badge::after {
+    width: 4px;
+    height: 12px;
+  }
+  .play-overlay.playing.is-video .badge::before,
+  .play-overlay.playing.is-audio .badge::before { margin-left: -5px; }
+  .play-overlay.playing.is-video .badge::after,
+  .play-overlay.playing.is-audio .badge::after { margin-left: 5px; }
+}
 }
