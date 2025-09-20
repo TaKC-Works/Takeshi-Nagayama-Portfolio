@@ -41,6 +41,14 @@ body {
   overflow: hidden;
 }
 
+/* 動画（カード内） */
+.card .thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* 16:9エリアにトリミング */
+  display: block;
+}
+
 .card .thumb img {
   width: 100%;
   height: 100%;
