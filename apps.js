@@ -30,85 +30,129 @@
     }
 
     list.forEach(item => {
-      const node = tpl.content.cloneNode(true);
+  const node  = tpl.content.cloneNode(true);
+  const img   = node.querySelector('img');
+  const video = node.querySelector('.video');
+  const audio = node.querySelector('audio');
+  const title = node.querySelector('.title');
+  const desc  = node.querySelector('.desc');
+  const tags  = node.querySelector('.tags');
+  const btn   = node.querySelector('.play-btn');
+  const link  = node.querySelector('.open-link');
 
-      const img   = node.querySelector('img');
-      const video = node.querySelector('.video');
-      const audio = node.querySelector('audio');
-      const title = node.querySelector('.title');
-      const desc  = node.querySelector('.desc');
-      const tags  = node.querySelector('.tags');
-      const btn   = node.querySelector('.play-btn');
-      const link  = node.querySelector('.open-link');
+  // ★ 追加：オーバーレイ要素
+  const overlay = node.querySelector('.play-overlay');
 
-      title.textContent = item.title || '';
-      desc.textContent  = item.description || '';
+  // テキスト等は既存のまま
+  title.textContent = item.title || '';
+  desc.textContent  = item.description || '';
 
-      const fallback = 'assets/art/sample1.png';
-      const artworkSrc = (item.artwork && item.artwork.trim()) ? item.artwork : fallback;
-      img.src = artworkSrc;
-      img.alt = (item.title || 'artwork');
+  const fallback = 'assets/art/sample1.png';
+  const artworkSrc = (item.artwork && item.artwork.trim()) ? item.artwork : fallback;
+  img.src = artworkSrc;
+  img.alt = (item.title || 'artwork');
 
-      if (Array.isArray(item.tags)) {
-        item.tags.forEach(t => {
-          const s = document.createElement('span');
-          s.className = 'tag';
-          s.textContent = t;
-          tags.appendChild(s);
-        });
-      }
-
-      if (item.video && String(item.video).trim()) {
-        video.hidden = false;
-        video.src = item.video;
-        if (item.artwork && item.artwork.trim()) video.setAttribute('poster', item.artwork);
-        img.hidden = true;
-        btn.hidden = true;
-
-        video.addEventListener('play', () => { pauseOthers(video); });
-
-        const meta = node.querySelector('.meta');
-        function showErr(msg){
-          const p = document.createElement('p');
-          p.style.color = '#c00';
-          p.style.fontSize = '0.8rem';
-          p.textContent = `Video error: ${msg}`;
-          meta.appendChild(p);
-        }
-        video.addEventListener('error', () => {
-          const err = video.error;
-          const map = {1:'ABORTED',2:'NETWORK',3:'DECODE',4:'SRC_NOT_SUPPORTED'};
-          showErr(err ? (map[err.code] || `code=${err.code}`) : 'unknown');
-        });
-
-      } else if (item.audio && String(item.audio).trim()) {
-        audio.src = item.audio;
-        btn.hidden = false;
-
-        btn.addEventListener('click', () => {
-          if (audio.paused) {
-            pauseOthers(audio);
-            audio.play();
-            btn.textContent = '⏸ 停止';
-          } else {
-            audio.pause();
-            btn.textContent = '▶︎ 再生';
-          }
-        });
-        audio.addEventListener('pause', () => { btn.textContent = '▶︎ 再生'; });
-        audio.addEventListener('ended', () => { btn.textContent = '▶︎ 再生'; });
-      } else {
-        btn.hidden = true;
-      }
-
-      if (item.url && String(item.url).trim()) {
-        link.hidden = false;
-        link.href = item.url;
-        link.textContent = '外部リンク';
-      }
-
-      grid.appendChild(node);
+  if (Array.isArray(item.tags)) {
+    item.tags.forEach(t => {
+      const s = document.createElement('span');
+      s.className = 'tag';
+      s.textContent = t;
+      tags.appendChild(s);
     });
+  }
+
+  // 種類フラグ
+  const hasVideo = !!(item.video && String(item.video).trim());
+  const hasAudio = !!(item.audio && String(item.audio).trim());
+  const hasLink  = !!(item.url   && String(item.url).trim());
+
+  // overlay の内容をセット（種類別バッジ）
+  function setOverlay(kind) {
+    overlay.className = `play-overlay ${kind ? 'is-'+kind : ''}`;
+    const badge = document.createElement('div');
+    badge.className = 'badge';
+    badge.textContent = kind === 'video' ? '▶︎' : kind === 'audio' ? '🎧' : kind === 'link' ? '🔗' : '';
+    overlay.replaceChildren(badge);
+  }
+
+  // クリックで再生/停止・リンク遷移
+  function bindOverlayForVideo() {
+    overlay.addEventListener('click', () => {
+      if (video.paused) { pauseOthers(video); video.play(); } else { video.pause(); }
+    });
+    video.addEventListener('play',  () => overlay.classList.add('hidden'));
+    video.addEventListener('pause', () => overlay.classList.remove('hidden'));
+    video.addEventListener('ended', () => overlay.classList.remove('hidden'));
+  }
+  function bindOverlayForAudio() {
+    overlay.addEventListener('click', () => {
+      if (audio.paused) { pauseOthers(audio); audio.play(); }
+      else { audio.pause(); }
+    });
+    audio.addEventListener('play',  () => overlay.classList.add('hidden'));
+    audio.addEventListener('pause', () => overlay.classList.remove('hidden'));
+    audio.addEventListener('ended', () => overlay.classList.remove('hidden'));
+  }
+  function bindOverlayForLink() {
+    overlay.addEventListener('click', () => {
+      window.open(item.url, '_blank', 'noopener');
+    });
+  }
+
+  // ▼▼ 優先順位：video > audio > link
+  if (hasVideo) {
+    video.hidden = false;
+    video.src = item.video;
+    if (item.artwork && item.artwork.trim()) video.setAttribute('poster', item.artwork);
+    img.hidden = true;
+    btn.hidden = true;
+
+    setOverlay('video');           // ▶︎
+    overlay.classList.remove('hidden');
+    bindOverlayForVideo();
+
+    // エラーハンドリング（任意）
+    video.addEventListener('play', () => pauseOthers(video));
+  }
+  else if (hasAudio) {
+    audio.src = item.audio;
+    btn.hidden = false; // 従来の再生ボタンも残す（アクセシビリティ的に◎）
+
+    setOverlay('audio');           // 🎧
+    overlay.classList.remove('hidden');
+    bindOverlayForAudio();
+
+    btn.addEventListener('click', () => {
+      if (audio.paused) { pauseOthers(audio); audio.play(); overlay.classList.add('hidden'); btn.textContent = '⏸ 停止'; }
+      else { audio.pause(); overlay.classList.remove('hidden'); btn.textContent = '▶︎ 再生'; }
+    });
+    audio.addEventListener('pause', () => { btn.textContent = '▶︎ 再生'; });
+    audio.addEventListener('ended', () => { btn.textContent = '▶︎ 再生'; });
+  }
+  else {
+    // 再生メディアなし
+    btn.hidden = true;
+    if (hasLink) {
+      link.hidden = false; link.href = item.url; link.textContent = '外部リンク';
+      setOverlay('link');         // 🔗
+      overlay.classList.remove('hidden');
+      bindOverlayForLink();
+    } else {
+      // 何もないならオーバーレイ非表示
+      overlay.classList.add('hidden');
+    }
+  }
+
+  // 既存：外部リンクの表示（音声/動画があっても併記でOK）
+  if (hasLink) {
+    link.hidden = false;
+    link.href = item.url;
+    link.textContent = '外部リンク';
+  }
+
+  grid.appendChild(node);
+});
+    
   }
 
   function normalize(s){ return (s||'').toString().toLowerCase(); }
@@ -125,3 +169,4 @@
 
   render(items);
 })();
+
