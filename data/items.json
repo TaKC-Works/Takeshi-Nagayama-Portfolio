@@ -54,7 +54,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Frontiasky.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story1-0.wav",
     "url": "",
-    "tags": ["music","intaractive,music","piano,riff","game"]
+    "tags": ["music","interactive,music","piano,riff","game"]
   }, 
   {
     "title": "インタラクティブミュージック  （展開1）_DEMO",
@@ -62,7 +62,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Frontiasky.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story1-2.wav",
     "url": "",
-    "tags": ["music","intaractive,music","electoronica","game"]
+    "tags": ["music","interactive,music","electoronica","game"]
   },
   {
     "title": "インタラクティブミュージック  （展開2）_DEMO",
@@ -70,7 +70,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Frontiasky.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/BossBattle%20%EF%BC%88%E8%B2%A0%E3%81%91%E3%81%9D%E3%81%86%EF%BC%89.wav",
     "url": "",
-    "tags": ["music","intaractive,music","beat,mash","dnb","game"]
+    "tags": ["music","interactive,music","beat,mash","dnb","game"]
   },
   {
     "title": "Conduct to space",
@@ -122,11 +122,11 @@
   },
   {
     "title": "Metal halloween_DEMO",
-    "description": "",
-    "artwork": "",
+    "description": "突然わちゃわちゃしたハロウィンロックを想定いたしました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Halloween.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/BattleParty.wav",
     "url": "",
-    "tags": ["music","game"]
+    "tags": ["music","Halloween","rock","game"]
   },
   {
     "title": "Duel of headhunters_DEMO",
@@ -134,23 +134,23 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Femaledrummer.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Quest2.wav",
     "url": "",
-    "tags": ["music","synthsizer","game"]
+    "tags": ["music","synthesizer","game"]
   },
   {
     "title": "トライコア様案件_DEMO",
-    "description": "",
-    "artwork": "",
+    "description": "空耳日本語英語を交えた歌詞をリクエストされ、生成いたしました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Stempunkprofessor.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/UBidSum_Theme.wav",
     "url": "",
-    "tags": ["music","game"]
+    "tags": ["music","ai,generated","electronica","game"]
   }, 
   {
     "title": "New kings",
-    "description": "",
-    "artwork": "",
+    "description": "2014年、ニュージーランドRed Bull Studioで制作いたしました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Hiphop2.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Raiza%20Biza%20Track%2003.wav",
     "url": "",
-    "tags": ["music"]
+    "tags": ["music","hiphop","rap","recording"]
   }, 
   {
     "title": "Catchin' up",
@@ -186,7 +186,7 @@
   },
   {
     "title": "Musium song",
-    "description": "20012年、ギタリスト吉田智のアルバムにフィーチャリングされた時の録音です。テーマと先行ソロが私です。1発録りいたしました。",
+    "description": "20012年、ギタリスト吉田智のアルバムでの録音です。テーマと先行ソロが私です。マイク3本で1発録りをいたしました。",
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/guitar.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/gutizumduo.wav",
     "url": "",
@@ -203,17 +203,17 @@
   {
     "title": "某社ロゴジングル",
     "description": "2020年、某社ロゴジングルを制作いたしました。細かなパーティクルがうろこ状に会社ロゴを形成し、弾けて正式なロゴが現れるというCG演出にシンクロさせました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Jacketofmuso.png",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Desertbikesky.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2020_%E3%83%AD%E3%82%B3%E3%82%99%E3%82%B7%E3%82%99%E3%83%B3%E3%82%AF%E3%82%99%E3%83%AB.wav",
     "url": "",
     "tags": ["music","sound,designe","logo","jingle"]
   },  
   {
     "title": "マクドナルド　ハッピーセット",
-    "description": "2004年の作品です。日本人なまりの英語で学園ビートパンク的なコンセプトを表現いたしました。",
+    "description": "2004年の作品です。日本人訛りの英語で学園ビートパンク的なコンセプトを表現いたしました。",
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Burger.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2004_TVCM_McDonald%E2%80%99s_HappySet.wav",
     "url": "",
-    "tags": ["music","TVCM"]
+    "tags": ["music","beat,punk","tvcm"]
   }
 ]
