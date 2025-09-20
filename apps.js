@@ -80,18 +80,20 @@ function setOverlay(kind) {
     overlay.addEventListener('click', () => {
       if (video.paused) { pauseOthers(video); video.play(); } else { video.pause(); }
     });
-    video.addEventListener('play',  () => overlay.classList.add('hidden'));
-    video.addEventListener('pause', () => overlay.classList.remove('hidden'));
-    video.addEventListener('ended', () => overlay.classList.remove('hidden'));
+  // video 側
+video.addEventListener('play',  () => overlay.classList.add('playing'));
+video.addEventListener('pause', () => overlay.classList.remove('playing'));
+video.addEventListener('ended', () => overlay.classList.remove('playing'));
   }
   function bindOverlayForAudio() {
     overlay.addEventListener('click', () => {
       if (audio.paused) { pauseOthers(audio); audio.play(); }
       else { audio.pause(); }
     });
-    audio.addEventListener('play',  () => overlay.classList.add('hidden'));
-    audio.addEventListener('pause', () => overlay.classList.remove('hidden'));
-    audio.addEventListener('ended', () => overlay.classList.remove('hidden'));
+// audio 側
+audio.addEventListener('play',  () => overlay.classList.add('playing'));
+audio.addEventListener('pause', () => overlay.classList.remove('playing'));
+audio.addEventListener('ended', () => overlay.classList.remove('playing'));
   }
   function bindOverlayForLink() {
     overlay.addEventListener('click', () => {
@@ -167,6 +169,7 @@ function setOverlay(kind) {
 
   render(items);
 })();
+
 
 
 
