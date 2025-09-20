@@ -67,13 +67,13 @@
   const hasLink  = !!(item.url   && String(item.url).trim());
 
   // overlay の内容をセット（種類別バッジ）
-  function setOverlay(kind) {
-    overlay.className = `play-overlay ${kind ? 'is-'+kind : ''}`;
-    const badge = document.createElement('div');
-    badge.className = 'badge';
-    badge.textContent = kind === 'video' ? '▶︎' : kind === 'audio' ? '🎧' : kind === 'link' ? '🔗' : '';
-    overlay.replaceChildren(badge);
-  }
+function setOverlay(kind) {
+  overlay.className = `play-overlay ${kind ? 'is-'+kind : ''}`;
+  const badge = document.createElement('div');
+  badge.className = 'badge';
+  // badge.textContent = ... ← 削除！
+  overlay.replaceChildren(badge);
+}
 
   // クリックで再生/停止・リンク遷移
   function bindOverlayForVideo() {
@@ -167,5 +167,6 @@
 
   render(items);
 })();
+
 
 
