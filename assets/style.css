@@ -144,4 +144,37 @@ body {
   .card .desc {
     font-size: 0.75rem;
   }
+  /* overlay: 画像/動画の中央に丸アイコン */
+.thumb { position: relative; }
+
+.play-overlay {
+  position: absolute;
+  inset: 0;                 /* クリックしやすいよう全面 */
+  display: grid;
+  place-items: center;
+  pointer-events: auto;     /* クリック可（必要ならauto）*/
+  cursor: pointer;
+}
+
+/* 丸いバッジ */
+.play-overlay .badge {
+  display: inline-grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px;
+  font-size: 28px;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  user-select: none;
+}
+
+/* 種類別カラー */
+.play-overlay.is-video .badge { background: rgba(0,0,0,0.55); }   /* ▶︎ */
+.play-overlay.is-audio .badge { background: rgba(25, 118, 210, .7); } /* 🎧 */
+.play-overlay.is-link  .badge { background: rgba(0, 200, 83, .7); }   /* 🔗 */
+
+/* 再生中フェードアウト（JSで .hidden を付け外し） */
+.play-overlay.hidden { opacity: 0; pointer-events: none; transition: opacity .15s; }
+.play-overlay { opacity: 1; transition: opacity .15s; }
 }
