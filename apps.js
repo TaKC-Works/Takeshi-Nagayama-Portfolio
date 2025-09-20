@@ -62,10 +62,37 @@
         });
       }
 
-   // ▼▼ メディア分岐：video があれば最優先で表示
+   // ▼▼ メディア分岐：video
 if (item.video && String(item.video).trim()) {
   video.hidden = false;
   video.src = item.video;
+  if (item.artwork && item.artwork.trim()) video.setAttribute('poster', item.artwork);
+  img.hidden = true;
+  btn.hidden = true;
+
+  video.addEventListener('play', () => { pauseAllMedia(); });
+
+  // ★ 追加：再生トラブルの可視化
+  const meta = node.querySelector('.meta');
+  function showErr(msg){
+    const p = document.createElement('p');
+    p.style.color = '#c00';
+    p.style.fontSize = '0.8rem';
+    p.textContent = `Video error: ${msg}`;
+    meta.appendChild(p);
+  }
+  video.addEventListener('error', () => {
+    const err = video.error;
+    if (!err) return showErr('unknown');
+    const map = {
+      1: 'ABORTED',      // ユーザー中断
+      2: 'NETWORK',      // ネットワークエラー
+      3: 'DECODE',       // デコード不可（コーデック不一致など）
+      4: 'SRC_NOT_SUPPORTED' // MIME/CORS/Range等
+    };
+    showErr(map[err.code] || `code=${err.code}`);
+  });
+}
 
   // ★ poster は既に決めた artworkSrc を使う（404回避）
   if (artworkSrc) video.setAttribute('poster', artworkSrc);
@@ -139,6 +166,7 @@ if (item.video && String(item.video).trim()) {
 
   render(items);
 })();
+
 
 
 
