@@ -151,11 +151,11 @@ body {
 .play-overlay.playing.is-audio .badge::after {
   content: "";
   display: block;
-  width: 4px;          /* 均等に細め */
+  width: 4px;
   height: 14px;
   background: #fff;
   transition: all 0.25s ease;
-  margin: 0 2px;       /* 左右均等な間隔 */
+  margin: 0 2px;   /* 左右均等 */
 }
 
 /* 🔗 リンクアイコン（崩さない） */
@@ -211,4 +211,6 @@ body {
   .play-overlay.playing.is-audio .badge::after {
     width: 4px;
     height: 12px;
+    margin: 0 2px;
+  }
 }
