@@ -5,8 +5,8 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Ciberpunkcity.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2500908_Distopia%20or%20Flontia.wav",
     "url": "",
-    "tags": ["music","breakbeats","demo","game","composition"]
-    "focus": "center bottom"  
+    "tags": ["music","breakbeats","demo","game","composition"],
+    "focus": "center bottom"
   },
   {
     "title": "If sky falls_DEMO",
@@ -22,8 +22,8 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Musiclabo.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250916_Mashed%20Sound.wav",
     "url": "",
-    "tags": ["music","beatmash","demo","game","composition"]
-    "focus": "center bottom"  
+    "tags": ["music","beatmash","demo","game","composition"],
+    "focus": "center bottom"
   },
   {
     "title": "Freeway combo＿DEMO",
@@ -31,8 +31,8 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Combo.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_MakeItEpicLater.wav",
     "url": "",
-    "tags": ["music","jazz","demo","game","composition"]
-    "focus": "center bottom"  
+    "tags": ["music","jazz","demo","game","composition"],
+    "focus": "center bottom"
   },
   {
     "title": "Duel preparation_DEMO",
@@ -43,22 +43,22 @@
     "tags": ["music","orchestra","demo","game","composition"]
   },
   {
-  "title": "Webtoon",
-  "description": "音効とBGMを制作いたしました。依頼元の指示によりパブリックドメインのクラシック音源をカバーし、途中挿入しています。",
-  "artwork": "",
-  "video": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2024_1219_webtoon.mp4",
-  "audio": "",
-  "url": "",
-  "tags": ["video","sound,design","webtoon"]
-},
-    {
+    "title": "Webtoon",
+    "description": "音効とBGMを制作いたしました。依頼元の指示によりパブリックドメインのクラシック音源をカバーし、途中挿入しています。",
+    "artwork": "",
+    "video": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2024_1219_webtoon.mp4",
+    "audio": "",
+    "url": "",
+    "tags": ["video","sound,design","webtoon"]
+  },
+  {
     "title": "インタラクティブミュージック  （モチーフ）_DEMO",
     "description": "インタラクティブミュージックのためのコードのみを書き出しました。",
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Frontiasky.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story1-0.wav",
     "url": "",
     "tags": ["music","interactive music","piano riff","game"]
-  }, 
+  },
   {
     "title": "インタラクティブミュージック  （展開1）_DEMO",
     "description": "（モチーフ）を展開して楽曲を作成いたしました。",
@@ -99,14 +99,14 @@
     "url": "",
     "tags": ["music","jazz","electronica","game","composition"]
   },
-    {
+  {
     "title": "Scinario mode（original）_DEMO",
     "description": "Sci-Fi系のストーリーを意識いたしました。",
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Streetband.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story2-1.wav",
     "url": "",
     "tags": ["music","neo soul","hiphop","game"]
-  }, 
+  },
   {
     "title": "Scinario mode(remix1)_DEMO",
     "description": "オリジナルよりもエピックな没入感を意識いたしました。",
@@ -129,8 +129,8 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Halloween.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/BattleParty.wav",
     "url": "",
-    "tags": ["music","Halloween","rock","game"]
-    "focus": "center top"  
+    "tags": ["music","Halloween","rock","game"],
+    "focus": "center top"
   },
   {
     "title": "Duel of headhunters_DEMO",
@@ -147,16 +147,16 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/UBidSum_Theme.wav",
     "url": "",
     "tags": ["music","ai,generated","electronica","game"]
-  }, 
+  },
   {
     "title": "New kings",
     "description": "2014年、ニュージーランドRed Bull Studioで制作いたしました。",
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Hiphop2.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Raiza%20Biza%20Track%2003.wav",
     "url": "",
-    "tags": ["music","hiphop","rap","recording"]
-    "focus": "center top"  
-  }, 
+    "tags": ["music","hiphop","rap","recording"],
+    "focus": "center top"
+  },
   {
     "title": "Catchin' up",
     "description": "2004年に立ち上げたバンド・女性ヴォーカル作品です。現状手元に元音源がなくYouTubeからの引用なので曲前にCMが流れることをご容赦いただければ幸いです。",
@@ -180,7 +180,7 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/14434707.m4a",
     "url": "",
     "tags": ["music","organic soul","female vocal","produce"]
-  }, 
+  },
   {
     "title": "Spin a bill_DEMO",
     "description": "ノスタルジックなソウルシティポップ、男性ヴォーカルを想定いたしました。",
@@ -212,7 +212,7 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2020_%E3%83%AD%E3%82%B3%E3%82%99%E3%82%B7%E3%82%99%E3%83%B3%E3%82%AF%E3%82%99%E3%83%AB.wav",
     "url": "",
     "tags": ["music","sound design","logo","jingle"]
-  },  
+  },
   {
     "title": "マクドナルド　ハッピーセット",
     "description": "2004年の作品です。日本人訛りの英語で学園ビートパンク的なコンセプトを表現いたしました。",
