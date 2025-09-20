@@ -142,25 +142,27 @@ body {
   margin-left: 3px; /* 見た目の中央補正 */
 }
 
-/* 🎧（audio）簡易ヘッドホン */
+/* 🎧（audio）スリム版 */
 .play-overlay.is-audio .badge::before,
 .play-overlay.is-audio .badge::after {
   content: "";
   position: absolute;
-  border: 3px solid #fff;
+  border: 2px solid #fff;   /* ← 太さを 3px → 2px に変更 */
   border-radius: 50%;
 }
-.play-overlay.is-audio .badge::before {  /* アーチ */
-  width: 22px; height: 22px;
-  top: 9px; left: 11px;
+
+.play-overlay.is-audio .badge::before {  /* アーチ部分 */
+  width: 18px; height: 18px;  /* ← 小さめに */
+  top: 13px; left: 13px;      /* ← バッジ中央に調整 */
   border-bottom: none;
 }
+
 .play-overlay.is-audio .badge::after {   /* イヤーパッド */
-  width: 5px; height: 12px;
-  top: 18px; left: 9px;
-  border-radius: 3px;
+  width: 4px; height: 10px;   /* ← 細めに */
+  top: 20px; left: 11px;      /* ← 中央寄せ */
+  border-radius: 2px;
   background: #fff;
-  box-shadow: 24px 0 0 #fff; /* 右側 */
+  box-shadow: 20px 0 0 #fff;  /* ← 間隔を少し狭める */
 }
 
 /* 🔗（link）鎖のイメージ */
