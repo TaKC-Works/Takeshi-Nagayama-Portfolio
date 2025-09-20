@@ -1,4 +1,4 @@
-/* ベース */
+/* ========== Base ========== */
 body {
   font-family: sans-serif;
   margin: 0;
@@ -14,11 +14,11 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* 横幅が広め */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
 }
 
-/* カード */
+/* ========== Card ========== */
 .card {
   display: flex;
   flex-direction: column;
@@ -29,60 +29,38 @@ body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   transition: transform 0.2s;
 }
+.card:hover { transform: translateY(-4px); }
 
-.card:hover {
-  transform: translateY(-4px);
-}
-
-/* サムネイル（横長） */
+/* ========== Thumb (16:9) ========== */
 .card .thumb {
+  position: relative;           /* ← overlayを載せるために必要 */
   width: 100%;
-  aspect-ratio: 16 / 9;       /* ← 横長比率 */
+  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 
 /* hidden の時は確実に非表示 */
 .card .thumb :is(img, video)[hidden] { display: none; }
 
-/* 動画（カード内） */
+/* 画像/動画のフィット */
+.card .thumb img,
 .card .thumb video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;  /* 16:9エリアにトリミング */
-  display: block;
-}
-
-.card .thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* メタ情報 */
-.card .meta {
-  padding: 0.8rem 1rem 0.5rem;
-}
+/* ========== Meta / Tags / Actions ========== */
+.card .meta { padding: 0.8rem 1rem 0.5rem; }
+.card .title { font-size: 1.1rem; font-weight: bold; margin: 0 0 0.3rem; }
+.card .desc { font-size: 0.85rem; color: #555; margin: 0 0 0.5rem; }
 
-.card .title {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin: 0 0 0.3rem;
-}
-
-.card .desc {
-  font-size: 0.85rem;
-  color: #555;
-  margin: 0 0 0.5rem;
-}
-
-/* タグ */
 .card .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.3rem;
 }
-
 .card .tag {
   background: #eee;
   border-radius: 5px;
@@ -90,7 +68,6 @@ body {
   font-size: 0.7rem;
 }
 
-/* ボタン類 */
 .card .actions {
   display: flex;
   justify-content: space-between;
@@ -98,31 +75,19 @@ body {
   padding: 0.5rem 1rem 1rem;
 }
 
-.play-btn, .open-link {
-  font-size: 0.8rem;
-  cursor: pointer;
-}
-
+.play-btn, .open-link { font-size: 0.8rem; cursor: pointer; }
 .play-btn {
-  background: #333;
-  color: #fff;
-  border: none;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
+  background: #333; color: #fff; border: none;
+  padding: 0.3rem 0.6rem; border-radius: 4px;
 }
+.open-link { text-decoration: none; color: #007bff; }
 
-.open-link {
-  text-decoration: none;
-  color: #007bff;
-}
-
-/* 検索ボックス */
+/* ========== Toolbar ========== */
 .toolbar {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
-
 #search {
   flex: 1;
   max-width: 300px;
@@ -131,50 +96,106 @@ body {
   border-radius: 4px;
 }
 
-/* モバイル対応 */
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-
-  .card .title {
-    font-size: 1rem;
-  }
-
-  .card .desc {
-    font-size: 0.75rem;
-  }
-  /* overlay: 画像/動画の中央に丸アイコン */
-.thumb { position: relative; }
-
+/* ========== Overlay (薄い全面+中央に小さめアイコン) ========== */
+/* クリック操作はJS側（.play-overlay に click listener） */
 .play-overlay {
   position: absolute;
-  inset: 0;                 /* クリックしやすいよう全面 */
+  inset: 0;                        /* サムネ全体を覆う */
   display: grid;
   place-items: center;
-  pointer-events: auto;     /* クリック可（必要ならauto）*/
+  background: rgba(0,0,0,0.18);    /* うっすら暗く */
+  opacity: 1;
+  transition: opacity .18s ease;
   cursor: pointer;
+  pointer-events: auto;
 }
 
-/* 丸いバッジ */
+/* 再生中は薄く消える（JSが .hidden を付与/除去） */
+.play-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 中央の丸バッジ（小さめ） */
 .play-overlay .badge {
   display: inline-grid;
   place-items: center;
-  width: 64px;
-  height: 64px;
+  width: 44px;
+  height: 44px;
   border-radius: 9999px;
-  font-size: 28px;
-  color: #fff;
+  background: rgba(0,0,0,0.55);
   box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  position: relative;
   user-select: none;
 }
 
-/* 種類別カラー */
-.play-overlay.is-video .badge { background: rgba(0,0,0,0.55); }   /* ▶︎ */
-.play-overlay.is-audio .badge { background: rgba(25, 118, 210, .7); } /* 🎧 */
-.play-overlay.is-link  .badge { background: rgba(0, 200, 83, .7); }   /* 🔗 */
+/* ▶︎（video）SVG風の三角形 */
+.play-overlay.is-video .badge::before {
+  content: "";
+  position: absolute;
+  width: 0; height: 0;
+  border-left: 14px solid #fff;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  margin-left: 3px; /* 見た目の中央補正 */
+}
 
-/* 再生中フェードアウト（JSで .hidden を付け外し） */
-.play-overlay.hidden { opacity: 0; pointer-events: none; transition: opacity .15s; }
-.play-overlay { opacity: 1; transition: opacity .15s; }
+/* 🎧（audio）簡易ヘッドホン */
+.play-overlay.is-audio .badge::before,
+.play-overlay.is-audio .badge::after {
+  content: "";
+  position: absolute;
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+.play-overlay.is-audio .badge::before {  /* アーチ */
+  width: 22px; height: 22px;
+  top: 9px; left: 11px;
+  border-bottom: none;
+}
+.play-overlay.is-audio .badge::after {   /* イヤーパッド */
+  width: 5px; height: 12px;
+  top: 18px; left: 9px;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 24px 0 0 #fff; /* 右側 */
+}
+
+/* 🔗（link）鎖のイメージ */
+.play-overlay.is-link .badge::before,
+.play-overlay.is-link .badge::after {
+  content: "";
+  position: absolute;
+  border: 3px solid #fff;
+  border-radius: 4px;
+}
+.play-overlay.is-link .badge::before {
+  width: 16px; height: 6px;
+  transform: rotate(-30deg);
+}
+.play-overlay.is-link .badge::after {
+  width: 16px; height: 6px;
+  transform: rotate(30deg);
+}
+
+/* hover時は少し濃くして押せる感 */
+.card .thumb:hover .play-overlay:not(.hidden) {
+  background: rgba(0,0,0,0.26);
+}
+
+/* キーボード操作に備えて focus-visible の視認性も追加（任意） */
+.play-overlay:focus-visible {
+  outline: 3px solid #3b82f6; /* 青系 */
+  outline-offset: -3px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 600px) {
+  .grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .card .title { font-size: 1rem; }
+  .card .desc { font-size: 0.75rem; }
+  .play-overlay .badge { width: 40px; height: 40px; }
+  .play-overlay.is-video .badge::before {
+    border-left-width: 12px; border-top-width: 8px; border-bottom-width: 8px;
+  }
 }
