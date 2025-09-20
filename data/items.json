@@ -50,8 +50,8 @@
 },
     {
     "title": "インタラクティブミュージック  （モチーフ）_DEMO",
-    "description": "",
-    "artwork": "",
+    "description": "インタラクティブミュージックのためのコードのみを書き出しました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Electronica.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story1-0.wav",
     "url": "",
     "tags": ["music","intaractive,music","piano,riff","game"]
@@ -59,7 +59,7 @@
   {
     "title": "インタラクティブミュージック  （展開1）_DEMO",
     "description": "（モチーフ）を展開して楽曲を作成いたしました。",
-    "artwork": "",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Electronica.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story1-2.wav",
     "url": "",
     "tags": ["music","intaractive,music","game"]
@@ -67,7 +67,7 @@
   {
     "title": "インタラクティブミュージック  （展開2）_DEMO",
     "description": "（モチーフ）を展開して楽曲を作成いたしました。",
-    "artwork": "",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Electronica.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/BossBattle%20%EF%BC%88%E8%B2%A0%E3%81%91%E3%81%9D%E3%81%86%EF%BC%89.wav",
     "url": "",
     "tags": ["music","intaractive,music","game"]
@@ -75,10 +75,10 @@
   {
     "title": "インタラクティブミュージック  （展開3）",
     "description": "（モチーフ）を展開して楽曲を作成いたしました。",
-    "artwork": "",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Electronica.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_BeyondMajorAndMinor_Story.wav",
     "url": "",
-    "tags": ["music","game"]
+    "tags": ["music","intaractive,music","game"]
   },
   {
     "title": "Conduct to space",
