@@ -96,6 +96,30 @@
     "url": "",
     "tags": ["music","jazz","electronica","game","composition"]
   },
+    {
+    "title": "Scinario mode_DEMO",
+    "description": "",
+    "artwork": "",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story2-1.wav",
+    "url": "",
+    "tags": ["music","game"]
+  }, 
+  {
+    "title": "SCinario mode(remix)_DEMO",
+    "description": "",
+    "artwork": "",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story2-2.wav",
+    "url": "",
+    "tags": ["music","game"]
+  },
+  {
+    "title": "Metal halloween_DEMO",
+    "description": "",
+    "artwork": "",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/BattleParty.wav",
+    "url": "",
+    "tags": ["music","game"]
+  },
   {
     "title": "Duel of headhunters_DEMO",
     "description": "ハービーハンコックのエレクトリックバンドをネオ化してゲーム音楽としてまとめることを意識いたしました。",
@@ -175,30 +199,6 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_MaleVocal_StoryOfUrbansoul.wav",
     "url": "",
     "tags": ["music","city,pop","soul","retro","game"]
-  },
-  {
-    "title": "Scinario mode_DEMO",
-    "description": "",
-    "artwork": "",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story2-1.wav",
-    "url": "",
-    "tags": ["music","game"]
-  }, 
-  {
-    "title": "SCinario mode(remix)_DEMO",
-    "description": "",
-    "artwork": "",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story2-2.wav",
-    "url": "",
-    "tags": ["music","game"]
-  },
-  {
-    "title": "Metal halloween_DEMO",
-    "description": "",
-    "artwork": "",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/BattleParty.wav",
-    "url": "",
-    "tags": ["music","game"]
   },
   {
     "title": "New kings",
