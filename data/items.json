@@ -51,7 +51,7 @@
     {
     "title": "インタラクティブミュージック  （モチーフ）_DEMO",
     "description": "インタラクティブミュージックのためのコードのみを書き出しました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Electronica.png",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Streetband.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story1-0.wav",
     "url": "",
     "tags": ["music","intaractive,music","piano,riff","game"]
@@ -59,7 +59,7 @@
   {
     "title": "インタラクティブミュージック  （展開1）_DEMO",
     "description": "（モチーフ）を展開して楽曲を作成いたしました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Electronica.png",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Streetband.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story1-2.wav",
     "url": "",
     "tags": ["music","intaractive,music","game"]
@@ -67,16 +67,8 @@
   {
     "title": "インタラクティブミュージック  （展開2）_DEMO",
     "description": "（モチーフ）を展開して楽曲を作成いたしました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Electronica.png",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Streetband.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/BossBattle%20%EF%BC%88%E8%B2%A0%E3%81%91%E3%81%9D%E3%81%86%EF%BC%89.wav",
-    "url": "",
-    "tags": ["music","intaractive,music","game"]
-  },
-  {
-    "title": "インタラクティブミュージック  （展開3）",
-    "description": "（モチーフ）を展開して楽曲を作成いたしました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Electronica.png",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_BeyondMajorAndMinor_Story.wav",
     "url": "",
     "tags": ["music","intaractive,music","game"]
   },
@@ -103,6 +95,30 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2024_%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88%E6%89%93%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%99YouTube%E9%85%8D%E4%BF%A1%E7%95%AA%E7%B5%84%E7%94%A8%E6%A5%BD%E6%9B%B2Demo3.wav",
     "url": "",
     "tags": ["music","jazz","electronica","game","composition"]
+  },
+  {
+    "title": "Duel of headhunters_DEMO",
+    "description": "ハービーハンコックのエレクトリックバンドをネオ化してゲーム音楽としてまとめることを意識いたしました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Femaledrummer.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Quest2.wav",
+    "url": "",
+    "tags": ["music","synthsizer","game"]
+  },
+  {
+    "title": "トライコア様案件_DEMO",
+    "description": "",
+    "artwork": "",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/UBidSum_Theme.wav",
+    "url": "",
+    "tags": ["music","game"]
+  },
+  {
+    "title": "Beyond to Major_DEMO",
+    "description": "マイナーコード進行に対してできるだけメジャーコードのテンションを投影したフレーズを引用いたしました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Electronica.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_BeyondMajorAndMinor_Story.wav",
+    "url": "",
+    "tags": ["music","intaractive,music","game"]
   },
   {
     "title": "Catchin' up",
@@ -159,22 +175,6 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_MaleVocal_StoryOfUrbansoul.wav",
     "url": "",
     "tags": ["music","city,pop","soul","retro","game"]
-  },
-  {
-    "title": "Duel of headhunters_DEMO",
-    "description": "ハービーハンコックのエレクトリックバンドをネオ化してゲーム音楽としてまとめることを意識いたしました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Femaledrummer.png",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Quest2.wav",
-    "url": "",
-    "tags": ["music","synthsizer","game"]
-  },
-  {
-    "title": "トライコア様案件_DEMO",
-    "description": "",
-    "artwork": "",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/UBidSum_Theme.wav",
-    "url": "",
-    "tags": ["music","game"]
   },
   {
     "title": "Scinario mode_DEMO",
