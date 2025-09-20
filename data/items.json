@@ -99,18 +99,26 @@
     {
     "title": "Scinario mode_DEMO",
     "description": "",
-    "artwork": "",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Stempunkprofessor.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story2-1.wav",
     "url": "",
     "tags": ["music","game"]
   }, 
   {
-    "title": "SCinario mode(remix)_DEMO",
+    "title": "Scinario mode(remix1)_DEMO",
     "description": "",
-    "artwork": "",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Stempunkprofessor.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story2-2.wav",
     "url": "",
     "tags": ["music","game"]
+  },
+  {
+    "title": "Scinario mode(remix2)_DEMO",
+    "description": "マイナーコード進行に対してできるだけメジャーコードのテンションを投影したフレーズを引用いたしました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Stempunkprofessor.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_BeyondMajorAndMinor_Story.wav",
+    "url": "",
+    "tags": ["music","intaractive,music","game"]
   },
   {
     "title": "Metal halloween_DEMO",
@@ -135,14 +143,6 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/UBidSum_Theme.wav",
     "url": "",
     "tags": ["music","game"]
-  },
-  {
-    "title": "Beyond to Major_DEMO",
-    "description": "マイナーコード進行に対してできるだけメジャーコードのテンションを投影したフレーズを引用いたしました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Electronica.png",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_BeyondMajorAndMinor_Story.wav",
-    "url": "",
-    "tags": ["music","intaractive,music","game"]
   },
   {
     "title": "Catchin' up",
