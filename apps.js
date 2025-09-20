@@ -114,20 +114,18 @@
     // エラーハンドリング（任意）
     video.addEventListener('play', () => pauseOthers(video));
   }
-  else if (hasAudio) {
-    audio.src = item.audio;
-    btn.hidden = false; // 従来の再生ボタンも残す（アクセシビリティ的に◎）
+ else if (hasAudio) {
+  audio.src = item.audio;
 
-    setOverlay('audio');           // 🎧
-    overlay.classList.remove('hidden');
-    bindOverlayForAudio();
+  // ▼ テキストの再生ボタンは使わない（常に隠す）
+  btn.hidden = true;
 
-    btn.addEventListener('click', () => {
-      if (audio.paused) { pauseOthers(audio); audio.play(); overlay.classList.add('hidden'); btn.textContent = '⏸ 停止'; }
-      else { audio.pause(); overlay.classList.remove('hidden'); btn.textContent = '▶︎ 再生'; }
-    });
-    audio.addEventListener('pause', () => { btn.textContent = '▶︎ 再生'; });
-    audio.addEventListener('ended', () => { btn.textContent = '▶︎ 再生'; });
+  // ▼ サムネ中央の種別アイコン（🎧）だけで操作
+  setOverlay('audio');           // 🎧
+  overlay.classList.remove('hidden');
+  bindOverlayForAudio();
+
+  // （btn.addEventListener... や btnテキスト更新は全て削除）
   }
   else {
     // 再生メディアなし
@@ -169,4 +167,5 @@
 
   render(items);
 })();
+
 
