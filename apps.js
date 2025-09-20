@@ -1,4 +1,4 @@
-// assets/apps.js
+//apps.js
 (async function () {
   const grid = document.getElementById('grid');
   const search = document.getElementById('search');
@@ -131,5 +131,6 @@
 
   render(items);
 })();
+
 
 
