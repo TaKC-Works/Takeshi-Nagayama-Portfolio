@@ -220,4 +220,3 @@ body {
   .play-overlay.playing.is-video .badge::after,
   .play-overlay.playing.is-audio .badge::after { margin-left: 5px; }
 }
-}
