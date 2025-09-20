@@ -64,6 +64,15 @@
     "tags": ["music","jazz","electronica","game","composition"]
   },
   {
+  "title": "Showreel 2025 (MP4)",
+  "description": "R2ホストのMP4テスト",
+  "artwork": "",
+  "video": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2024_1219_webtoon.mp4",
+  "audio": "",
+  "url": "",
+  "tags": ["video","showreel"]
+　}
+  {
     "title": "Catchin' up",
     "description": "2004年の女性ヴォーカル作品です。現状手元に元音源がなくYouTubeからの引用なので曲前にCMが流れることをご容赦いただければ幸いです。",
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Girlrider.png",
@@ -206,15 +215,5 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2004_TVCM_McDonald%E2%80%99s_HappySet.wav",
     "url": "",
     "tags": ["music","TVCM"]
-  },
-  {
-  "title": "Showreel 2025 (MP4)",
-  "description": "R2ホストのMP4テスト",
-  "artwork": "",
-  "video": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2024_1219_webtoon.mp4",
-  "audio": "",
-  "url": "",
-  "tags": ["video","showreel"]
-}
+  }
 ]
-
