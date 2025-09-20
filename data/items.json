@@ -5,7 +5,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Ciberpunkcity.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2500908_Distopia%20or%20Flontia.wav",
     "url": "",
-    "tags": ["music","demo","game","composition"]
+    "tags": ["music","breakbeats","demo","game","composition"]
   },
   {
     "title": "If sky falls_DEMO",
@@ -13,7 +13,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Appointmentroad.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_EmotionalRock.wav",
     "url": "",
-    "tags": ["music","demo","game","composition"]
+    "tags": ["music","rock","demo","game","composition"]
   },
   {
     "title": "Mash up for tune up_DEMO",
@@ -21,7 +21,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Musiclabo.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250916_Mashed%20Sound.wav",
     "url": "",
-    "tags": ["music","demo","game","composition"]
+    "tags": ["music","beatmash","demo","game","composition"]
   },
   {
     "title": "Freeway combo＿DEMO",
@@ -29,7 +29,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Combo.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_MakeItEpicLater.wav",
     "url": "",
-    "tags": ["music","demo","game","composition"]
+    "tags": ["music","jazz","demo","game","composition"]
   },
   {
     "title": "Duel preparation_DEMO",
@@ -37,7 +37,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Fantasy.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250919_Classical%20vibe.wav",
     "url": "",
-    "tags": ["music","demo","game","composition"]
+    "tags": ["music","orchestra","demo","game","composition"]
   },
   {
     "title": "Conduct to space",
@@ -45,7 +45,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/LV3.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2024_Conduct%20To%20Space_%E4%B8%89%E8%8F%B1%E9%87%8D%E5%B7%A5H3%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88YouTube%E9%85%8D%E4%BF%A1%E7%95%AA%E7%B5%84%E3%83%86%E3%83%BC%E3%83%9E%E6%9B%B2.wav",
     "url": "",
-    "tags": ["music","composition","sound,direction"]
+    "tags": ["music","orchestra","composition","sound,direction"]
   },
   {
     "title": "March of heavy industry",
@@ -53,7 +53,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/SpaceConstruction.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2024_%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88%E6%89%93%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%99YouTube%E9%85%8D%E4%BF%A1%E7%95%AA%E7%B5%84%E7%94%A8%E6%A5%BD%E6%9B%B2Demo1_.wav",
     "url": "",
-    "tags": ["music","game","composition"]
+    "tags": ["music","orchestra","game","composition"]
   },
   {
     "title": "Cosmic Reflection",
@@ -61,7 +61,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Bike.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2024_%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88%E6%89%93%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%99YouTube%E9%85%8D%E4%BF%A1%E7%95%AA%E7%B5%84%E7%94%A8%E6%A5%BD%E6%9B%B2Demo3.wav",
     "url": "",
-    "tags": ["music","game","composition"]
+    "tags": ["music","jazz","electronica","game","composition"]
   },
   {
     "title": "Catchin' up",
@@ -69,7 +69,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Girlrider.png",
     "audio": "",
     "url": "https://www.youtube.com/watch?v=52lf3aaZjv8",
-    "tags": ["music","female,vocal","produce"]
+    "tags": ["music","band,sound","female,vocal","produce"]
   },
   {
     "title": "猿",
@@ -85,7 +85,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/FemaleSolitude.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/14434707.m4a",
     "url": "",
-    "tags": ["music","female,vocal","produce"]
+    "tags": ["music","organic,soul","female,vocal","produce"]
   },
   {
     "title": "Musium song",
@@ -93,7 +93,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/guitar.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/gutizumduo.wav",
     "url": "",
-    "tags": ["music","live,recording","guitar,duo","featuring"]
+    "tags": ["music","jazz","live,recording","guitar,duo","featuring"]
   },
   {
     "title": "某社ロゴジングル",
@@ -109,15 +109,15 @@
     "artwork": "",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250203_%E5%89%B5%E6%A5%AD%E7%A5%AD%E6%B4%BB%E6%80%A7%E7%A4%BE%E6%AD%8C_OP_Final2mix.wav",
     "url": "",
-    "tags": ["music","celebration"]
+    "tags": ["music","orchestra","celebration"]
   },
   {
     "title": "Spin a bill_DEMO",
     "description": "ノスタルジックなソウルシティポップを意識いたしました。",
-    "artwork": "",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/MaleSolitude.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_MaleVocal_StoryOfUrbansoul.wav",
-    "url": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/MaleSolitude.png",
-    "tags": ["music","game"]
+    "url": "",
+    "tags": ["music","city,pop","retro","game"]
   },
   {
     "title": "Duel of headhunters_DEMO",
@@ -125,7 +125,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Femaledrummer.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Quest2.wav",
     "url": "",
-    "tags": ["music","game"]
+    "tags": ["music","synthsizer","game"]
   },
   {
     "title": "インタラクティブミュージック（モチーフ）_DEMO",
@@ -133,21 +133,29 @@
     "artwork": "",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story1-0.wav",
     "url": "",
-    "tags": ["music","game"]
+    "tags": ["music","intaractive,music","piano,riff","game"]
   }, 
   {
     "title": "インタラクティブミュージック（展開1）_DEMO",
-    "description": "",
+    "description": "（モチーフ）を展開して楽曲を作成いたしました。",
     "artwork": "",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story1-2.wav",
     "url": "",
-    "tags": ["music","game"]
+    "tags": ["music","intaractive,music","game"]
   },
   {
     "title": "インタラクティブミュージック（展開2）_DEMO",
-    "description": "",
+    "description": "（モチーフ）を展開して楽曲を作成いたしました。",
     "artwork": "",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/BossBattle%20%EF%BC%88%E8%B2%A0%E3%81%91%E3%81%9D%E3%81%86%EF%BC%89.wav",
+    "url": "",
+    "tags": ["music","intaractive,music","game"]
+  },
+  {
+    "title": "インタラクティブミュージック（展開3）",
+    "description": "（モチーフ）を展開して楽曲を作成いたしました。",
+    "artwork": "",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_BeyondMajorAndMinor_Story.wav",
     "url": "",
     "tags": ["music","game"]
   },
@@ -180,14 +188,6 @@
     "description": "",
     "artwork": "",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/BattleParty.wav",
-    "url": "",
-    "tags": ["music","game"]
-  },
-  {
-    "title": "Minor to major_DEMO",
-    "description": "",
-    "artwork": "",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_BeyondMajorAndMinor_Story.wav",
     "url": "",
     "tags": ["music","game"]
   },
