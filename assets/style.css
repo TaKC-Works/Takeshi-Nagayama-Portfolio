@@ -158,12 +158,6 @@ body {
   margin: 0 2px;       /* 左右均等な間隔 */
 }
 
-}
-.play-overlay.playing.is-video .badge::before,
-.play-overlay.playing.is-audio .badge::before { margin-left: -6px; }
-.play-overlay.playing.is-video .badge::after,
-.play-overlay.playing.is-audio .badge::after { margin-left: 6px; }
-
 /* 🔗 リンクアイコン（崩さない） */
 .play-overlay.is-link .badge::before,
 .play-overlay.is-link .badge::after {
@@ -217,9 +211,4 @@ body {
   .play-overlay.playing.is-audio .badge::after {
     width: 4px;
     height: 12px;
-  }
-  .play-overlay.playing.is-video .badge::before,
-  .play-overlay.playing.is-audio .badge::before { margin-left: -5px; }
-  .play-overlay.playing.is-video .badge::after,
-  .play-overlay.playing.is-audio .badge::after { margin-left: 5px; }
 }
