@@ -143,7 +143,15 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/UBidSum_Theme.wav",
     "url": "",
     "tags": ["music","game"]
-  },
+  }, 
+  {
+    "title": "New kings",
+    "description": "",
+    "artwork": "",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Raiza%20Biza%20Track%2003.wav",
+    "url": "",
+    "tags": ["music"]
+  }, 
   {
     "title": "Catchin' up",
     "description": "2004年に立ち上げたバンド・女性ヴォーカル作品です。現状手元に元音源がなくYouTubeからの引用なので曲前にCMが流れることをご容赦いただければ幸いです。",
@@ -177,6 +185,14 @@
     "tags": ["music","jazz","live,recording","guitar,duo","featuring"]
   },
   {
+    "title": "Spin a bill_DEMO",
+    "description": "ノスタルジックなソウルシティポップを意識いたしました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/MaleSolitude.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_MaleVocal_StoryOfUrbansoul.wav",
+    "url": "",
+    "tags": ["music","city,pop","soul","retro","game"]
+  },
+  {
     "title": "某社記念式典用社歌アレンジ",
     "description": "2025年の某社創業祭オープニング音源として社歌をアレンジさせていただきました。",
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Maestro.png",
@@ -191,23 +207,7 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2020_%E3%83%AD%E3%82%B3%E3%82%99%E3%82%B7%E3%82%99%E3%83%B3%E3%82%AF%E3%82%99%E3%83%AB.wav",
     "url": "",
     "tags": ["music","sound,designe","logo","jingle"]
-  }, 
-  {
-    "title": "Spin a bill_DEMO",
-    "description": "ノスタルジックなソウルシティポップを意識いたしました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/MaleSolitude.png",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_MaleVocal_StoryOfUrbansoul.wav",
-    "url": "",
-    "tags": ["music","city,pop","soul","retro","game"]
-  },
-  {
-    "title": "New kings",
-    "description": "",
-    "artwork": "",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Raiza%20Biza%20Track%2003.wav",
-    "url": "",
-    "tags": ["music"]
-  }, 
+  },  
   {
     "title": "マクドナルド　ハッピーセット",
     "description": "2004年の作品です。日本人なまりの英語で学園ビートパンク的なコンセプトを表現いたしました。",
