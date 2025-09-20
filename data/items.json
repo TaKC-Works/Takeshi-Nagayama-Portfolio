@@ -214,6 +214,15 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2004_TVCM_McDonald%E2%80%99s_HappySet.wav",
     "url": "",
     "tags": ["music","TVCM"]
-  }
+  },
+  {
+  "title": "Showreel 2025 (MP4)",
+  "description": "R2ホストのMP4テスト",
+  "artwork": "https://pub-xxxxxxxxxxxxxxxx.r2.dev/showreel_poster.png",
+  "video": "https://pub-xxxxxxxxxxxxxxxx.r2.dev/showreel_1080p.mp4",
+  "audio": "",
+  "url": "",
+  "tags": ["video","showreel"]
+}
 ]
 
