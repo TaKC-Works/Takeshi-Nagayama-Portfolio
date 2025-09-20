@@ -41,6 +41,9 @@ body {
   overflow: hidden;
 }
 
+/* hidden の時は確実に非表示 */
+.card .thumb :is(img, video)[hidden] { display: none; }
+
 /* 動画（カード内） */
 .card .thumb video {
   width: 100%;
