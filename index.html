@@ -34,19 +34,20 @@
       <div class="thumb">
         <img alt="artwork" loading="lazy">
       <video class="video" controls preload="metadata" playsinline hidden></video>
-      </div>
-      <div class="meta">
-        <h3 class="title"></h3>
-        <p class="desc"></p>
-        <div class="tags"></div>
-      </div>
-      <div class="actions">
-        <button class="play-btn" hidden>▶︎ 再生</button>
-        <a class="open-link" target="_blank" rel="noopener" hidden>外部リンク</a>
-      </div>
-      <audio preload="none"></audio>
-    </article>
-  </template>
+          <div class="play-overlay" aria-hidden="true"></div>
+    </div>
+    <div class="meta">
+      <h3 class="title"></h3>
+      <p class="desc"></p>
+      <div class="tags"></div>
+    </div>
+    <div class="actions">
+      <button class="play-btn" hidden>▶︎ 再生</button>
+      <a class="open-link" target="_blank" rel="noopener" hidden>外部リンク</a>
+    </div>
+    <audio preload="none"></audio>
+  </article>
+</template>
   
 <script src="apps.js" defer></script>
 </body>
