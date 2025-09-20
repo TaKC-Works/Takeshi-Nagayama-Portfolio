@@ -157,6 +157,8 @@ body {
   transition: all 0.25s ease;
   margin: 0 2px;       /* 左右均等な間隔 */
 }
+
+}
 .play-overlay.playing.is-video .badge::before,
 .play-overlay.playing.is-audio .badge::before { margin-left: -6px; }
 .play-overlay.playing.is-video .badge::after,
