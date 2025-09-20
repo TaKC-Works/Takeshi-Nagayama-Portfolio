@@ -49,9 +49,37 @@
 
   const fallback = 'assets/art/sample1.png';
   const artworkSrc = (item.artwork && item.artwork.trim()) ? item.artwork : fallback;
-  img.src = artworkSrc;
-  img.alt = (item.title || 'artwork');
+// 既存
+img.src = artworkSrc;
+img.alt = (item.title || 'artwork');
 
+// 追加：画像エラーフォールバック
+img.onerror = () => {
+  if (img.src !== fallback) img.src = fallback;
+};
+
+// ▼▼ “焦点”ユーティリティ（0–100に丸める）
+function resolveFocus(imgKey = 'focus', arrKey = 'focal') {
+  if (item[imgKey] && String(item[imgKey]).trim()) {
+    return String(item[imgKey]).trim();  // e.g. "center top"
+  }
+  if (Array.isArray(item[arrKey]) && item[arrKey].length >= 2) {
+    const clamp = v => Math.max(0, Math.min(100, Number(v)));
+    const [x, y] = item[arrKey];
+    return `${clamp(x)}% ${clamp(y)}%`;  // e.g. [50,30] -> "50% 30%"
+  }
+  return null;
+}
+
+// 画像（サムネ）の焦点
+const imgFocus = resolveFocus('focus', 'focal');
+if (imgFocus) img.style.objectPosition = imgFocus;
+
+// 動画の焦点（あれば専用、なければ画像と同じ）
+const vidFocus = resolveFocus('focusVideo', 'focalVideo') || imgFocus;
+if (vidFocus) {
+  video.style.objectPosition = vidFocus;
+}
   if (Array.isArray(item.tags)) {
     item.tags.forEach(t => {
       const s = document.createElement('span');
@@ -103,19 +131,29 @@ audio.addEventListener('ended', () => overlay.classList.remove('playing'));
 
   // ▼▼ 優先順位：video > audio > link
   if (hasVideo) {
-    video.hidden = false;
-    video.src = item.video;
-    if (item.artwork && item.artwork.trim()) video.setAttribute('poster', item.artwork);
-    img.hidden = true;
-    btn.hidden = true;
+  video.hidden = false;
+  video.src = item.video;
 
-    setOverlay('video');           // ▶︎
-    overlay.classList.remove('hidden');
-    bindOverlayForVideo();
+  // ★ 差し替え：常に artworkSrc を poster に使う
+  // （fallback の sample1.png でも必ず効くようになる）
+  video.setAttribute('poster', artworkSrc);
 
-    // エラーハンドリング（任意）
-    video.addEventListener('play', () => pauseOthers(video));
+  // ★ 追加：動画専用 or 共通の焦点を反映
+  const vidFocus = resolveFocus('focusVideo', 'focalVideo') || imgFocus;
+  if (vidFocus) {
+    video.style.objectPosition = vidFocus;
   }
+
+  img.hidden = true;
+  btn.hidden = true;
+
+  setOverlay('video');           // ▶︎
+  overlay.classList.remove('hidden');
+  bindOverlayForVideo();
+
+  // エラーハンドリング（任意）
+  video.addEventListener('play', () => pauseOthers(video));
+}
  else if (hasAudio) {
   audio.src = item.audio;
 
@@ -169,7 +207,3 @@ audio.addEventListener('ended', () => overlay.classList.remove('playing'));
 
   render(items);
 })();
-
-
-
-
