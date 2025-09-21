@@ -22,6 +22,17 @@
     });
   }
 
+  // ★ キャッシュバスター用ヘルパー
+  function withBust(url, key) {
+    try {
+      const u = new URL(url, location.href);
+      u.searchParams.set('v', String(key));
+      return u.toString();
+    } catch {
+      return url + (url.includes('?') ? '&' : '?') + 'v=' + encodeURIComponent(key);
+    }
+  }
+
   function render(list) {
     grid.innerHTML = '';
     if (!Array.isArray(list) || list.length === 0) {
@@ -124,12 +135,12 @@
       }
 
       // ▼ 優先順位：video > audio > link
-     if (hasVideo) {
-  const bust = `?v=${encodeURIComponent(item.title)}`; // ★キャッシュバスター
-  video.hidden = false;
-  video.src = item.video + bust;  // ← ここ
-  video.setAttribute('poster', artworkSrc);
-  video.load(); // ★必ずリロード
+      if (hasVideo) {
+        const key = `${item.title}::${item.video}`;   // ← 一意なキー
+        video.hidden = false;
+        video.src = withBust(item.video, key);
+        video.setAttribute('poster', artworkSrc);
+        video.load();
 
         img.hidden = true;
         btn.hidden = true;
@@ -139,10 +150,10 @@
         bindOverlayForVideo();
         video.addEventListener('play', () => pauseOthers(video));
       }
-    else if (hasAudio) {
-  const bust = `?v=${encodeURIComponent(item.title)}`; // ★キャッシュバスター
-  audio.src = item.audio + bust; // ← ここ
-  audio.load(); // ★必ずリロード
+      else if (hasAudio) {
+        const key = `${item.title}::${item.audio}`;   // ← 一意なキー
+        audio.src = withBust(item.audio, key);
+        audio.load();
 
         btn.hidden = true;
         setOverlay('audio');
@@ -187,4 +198,3 @@
 
   render(items);
 })();
-
