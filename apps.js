@@ -4,7 +4,7 @@
   const search = document.getElementById('search');
   const tpl    = document.getElementById('card-template');
 
-  // ====== 共通ヘルパー ======
+  // ===== 共通ヘルパー =====
   function pauseOthers(current) {
     document.querySelectorAll('audio, video').forEach(m => {
       if (m !== current && !m.paused) m.pause();
@@ -33,7 +33,7 @@
     return null;
   }
 
-  // ====== メインレンダラー ======
+  // ===== レンダリング =====
   function render(list) {
     grid.innerHTML = '';
     if (!Array.isArray(list) || list.length === 0) {
@@ -41,7 +41,7 @@
       return;
     }
 
-    list.forEach(item => {
+    list.forEach((item, idx) => {
       const node    = tpl.content.cloneNode(true);
       const img     = node.querySelector('img');
       const video   = node.querySelector('.video');
@@ -62,71 +62,62 @@
       img.alt = item.title || 'artwork';
       img.onerror = () => { if (img.src !== fallback) img.src = fallback; };
 
-      // --- 焦点処理 ---
+      // --- 焦点 ---
       const imgFocus = resolveFocus(item, 'focus', 'focal');
       if (imgFocus) img.style.objectPosition = imgFocus;
       const vidFocus = resolveFocus(item, 'focusVideo', 'focalVideo') || imgFocus;
       if (vidFocus) video.style.objectPosition = vidFocus;
 
-      // --- タグ描画 ---
-      (item.tags || []).forEach(t => {
-        const s = document.createElement('span');
-        s.className = 'tag';
-        s.textContent = t;
-        tags.appendChild(s);
-      });
+      // --- タグ ---
+      if (item.tags && item.tags.length) {
+        tags.innerHTML = item.tags.map(t => `<span class="tag">${t}</span>`).join('');
+      }
 
-      // --- 種類判定 ---
+      // --- 判定 ---
       const hasVideo = !!(item.video && String(item.video).trim());
       const hasAudio = !!(item.audio && String(item.audio).trim());
       const hasLink  = !!(item.url   && String(item.url).trim());
 
-      // --- 共通オーバーレイ描画 ---
+      // --- オーバーレイ ---
       function setOverlay(kind) {
         overlay.className = `play-overlay ${kind ? 'is-'+kind : ''}`;
-        overlay.replaceChildren(Object.assign(document.createElement('div'), { className: 'badge' }));
+        overlay.innerHTML = `<div class="badge"></div>`;
       }
 
-      // --- 動作バインド ---
+      // --- 動作 ---
       if (hasVideo) {
         setOverlay('video');
         overlay.classList.remove('hidden');
-
-        overlay.addEventListener('click', () => {
+        overlay.onclick = () => {
           if (!video.src) {
-            video.src = withBust(item.video, `${item.title}::${item.video}`);
+            video.src = withBust(item.video, idx); // 短いキー
             video.setAttribute('poster', artworkSrc);
-            video.load();
           }
           if (video.paused) { pauseOthers(video); video.play(); } else { video.pause(); }
-        });
-
-        video.addEventListener('play',  () => overlay.classList.add('playing'));
-        video.addEventListener('pause', () => overlay.classList.remove('playing'));
-        video.addEventListener('ended', () => overlay.classList.remove('playing'));
+        };
+        video.onplay  = () => overlay.classList.add('playing');
+        video.onpause = () => overlay.classList.remove('playing');
+        video.onended = () => overlay.classList.remove('playing');
       }
       else if (hasAudio) {
         setOverlay('audio');
         overlay.classList.remove('hidden');
-
-        overlay.addEventListener('click', () => {
+        overlay.onclick = () => {
           if (!audio.src) {
-            audio.src = withBust(item.audio, `${item.title}::${item.audio}`);
-            audio.load();
+            audio.src = withBust(item.audio, idx);
           }
           if (audio.paused) { pauseOthers(audio); audio.play(); } else { audio.pause(); }
-        });
-
-        audio.addEventListener('play',  () => overlay.classList.add('playing'));
-        audio.addEventListener('pause', () => overlay.classList.remove('playing'));
-        audio.addEventListener('ended', () => overlay.classList.remove('playing'));
+        };
+        audio.onplay  = () => overlay.classList.add('playing');
+        audio.onpause = () => overlay.classList.remove('playing');
+        audio.onended = () => overlay.classList.remove('playing');
       }
       else if (hasLink) {
         setOverlay('link');
         overlay.classList.remove('hidden');
-        overlay.addEventListener('click', () => window.open(item.url, '_blank', 'noopener'));
+        overlay.onclick = () => window.open(item.url, '_blank', 'noopener');
         link.hidden = false;
-        link.href = item.url;
+        link.href   = item.url;
         link.textContent = '外部リンク';
       } else {
         overlay.classList.add('hidden');
@@ -136,7 +127,7 @@
     });
   }
 
-  // ====== 検索処理 ======
+  // ===== 検索 =====
   function normalize(s){ return (s||'').toString().toLowerCase(); }
   function matches(q, item){
     const n = normalize(q);
@@ -150,7 +141,7 @@
     render(q ? items.filter(it => matches(q, it)) : items);
   });
 
-  // ====== 初期ロード ======
+  // ===== 初期ロード =====
   let items = [];
   try {
     const res = await fetch('data/items.json', { cache: 'no-store' });
