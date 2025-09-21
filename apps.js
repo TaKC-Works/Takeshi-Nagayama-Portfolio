@@ -124,12 +124,12 @@
       }
 
       // ▼ 優先順位：video > audio > link
-      if (hasVideo) {
-        const bust = `?v=${encodeURIComponent(item.title)}`; // ★キャッシュバスター
-        video.hidden = false;
-        video.src = item.video + bust;
-        video.setAttribute('poster', artworkSrc);
-        video.load(); // ★明示的にリロード
+     if (hasVideo) {
+  const bust = `?v=${encodeURIComponent(item.title)}`; // ★キャッシュバスター
+  video.hidden = false;
+  video.src = item.video + bust;  // ← ここ
+  video.setAttribute('poster', artworkSrc);
+  video.load(); // ★必ずリロード
 
         img.hidden = true;
         btn.hidden = true;
@@ -139,10 +139,10 @@
         bindOverlayForVideo();
         video.addEventListener('play', () => pauseOthers(video));
       }
-      else if (hasAudio) {
-        const bust = `?v=${encodeURIComponent(item.title)}`; // ★キャッシュバスター
-        audio.src = item.audio + bust;
-        audio.load(); // ★明示的にリロード
+    else if (hasAudio) {
+  const bust = `?v=${encodeURIComponent(item.title)}`; // ★キャッシュバスター
+  audio.src = item.audio + bust; // ← ここ
+  audio.load(); // ★必ずリロード
 
         btn.hidden = true;
         setOverlay('audio');
@@ -187,3 +187,4 @@
 
   render(items);
 })();
+
