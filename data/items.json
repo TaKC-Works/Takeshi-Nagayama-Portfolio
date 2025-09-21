@@ -43,6 +43,14 @@
     "tags": ["music","orchestra","demo","game","composition"]
   },
   {
+    "title": "Bouncing delight_DEMO",
+    "description": "ユーティリティ系の操作画面への挿入を想定いたしました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Electronica.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Utility.wav",
+    "url": "",
+    "tags": ["music","Jazzy hiphop","electric piano","game"]
+  },
+  {
     "title": "Webtoon",
     "description": "音効とBGMを制作いたしました。依頼元の指示によりパブリックドメインのクラシック音源をカバーし、途中挿入しています。",
     "artwork": "",
@@ -52,16 +60,8 @@
     "tags": ["video","foley","sound　design","webtoon"]
   },
   {
-    "title": "インタラクティブミュージック  （モチーフ）_DEMO",
-    "description": "インタラクティブミュージックのためのコードのみを書き出しました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Frontiasky.png",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story1-0.wav",
-    "url": "",
-    "tags": ["music","interactive music","piano riff","game"]
-  },
-  {
     "title": "インタラクティブミュージック  （展開1）_DEMO",
-    "description": "（モチーフ）を展開して楽曲を作成いたしました。",
+    "description": "鬱屈した何かがある感じをイメージいたしました。",
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Frontiasky.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story1-2.wav",
     "url": "",
@@ -69,7 +69,7 @@
   },
   {
     "title": "インタラクティブミュージック  （展開2）_DEMO",
-    "description": "（モチーフ）を展開して楽曲を作成いたしました。",
+    "description": "ちょっと闇堕ちしかけた感じをイメージいたしました。",
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Frontiasky.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/BossBattle%20%EF%BC%88%E8%B2%A0%E3%81%91%E3%81%9D%E3%81%86%EF%BC%89.wav",
     "url": "",
