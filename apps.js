@@ -30,167 +30,147 @@
     }
 
     list.forEach(item => {
-  const node  = tpl.content.cloneNode(true);
-  const img   = node.querySelector('img');
-  const video = node.querySelector('.video');
-  const audio = node.querySelector('audio');
-  const title = node.querySelector('.title');
-  const desc  = node.querySelector('.desc');
-  const tags  = node.querySelector('.tags');
-  const btn   = node.querySelector('.play-btn');
-  const link  = node.querySelector('.open-link');
+      const node  = tpl.content.cloneNode(true);
+      const img   = node.querySelector('img');
+      const video = node.querySelector('.video');
+      const audio = node.querySelector('audio');
+      const title = node.querySelector('.title');
+      const desc  = node.querySelector('.desc');
+      const tags  = node.querySelector('.tags');
+      const btn   = node.querySelector('.play-btn');
+      const link  = node.querySelector('.open-link');
+      const overlay = node.querySelector('.play-overlay');
 
-  // ★ 追加：オーバーレイ要素
-  const overlay = node.querySelector('.play-overlay');
+      // ★ 旧ソースをリセット
+      img.removeAttribute('src');
+      video.removeAttribute('src');
+      audio.removeAttribute('src');
+      video.removeAttribute('poster');
+      try { video.load(); } catch {}
+      try { audio.load(); } catch {}
 
-  // テキスト等は既存のまま
-  title.textContent = item.title || '';
-  desc.textContent  = item.description || '';
+      // テキスト等
+      title.textContent = item.title || '';
+      desc.textContent  = item.description || '';
 
-  const fallback = 'assets/art/sample1.png';
-  const artworkSrc = (item.artwork && item.artwork.trim()) ? item.artwork : fallback;
-// 既存
-img.src = artworkSrc;
-img.alt = (item.title || 'artwork');
+      const fallback = 'assets/art/sample1.png';
+      const artworkSrc = (item.artwork && item.artwork.trim()) ? item.artwork : fallback;
+      img.src = artworkSrc;
+      img.alt = (item.title || 'artwork');
 
-// 追加：画像エラーフォールバック
-img.onerror = () => {
-  if (img.src !== fallback) img.src = fallback;
-};
+      img.onerror = () => {
+        if (img.src !== fallback) img.src = fallback;
+      };
 
-// ▼▼ “焦点”ユーティリティ（0–100に丸める）
-function resolveFocus(imgKey = 'focus', arrKey = 'focal') {
-  if (item[imgKey] && String(item[imgKey]).trim()) {
-    return String(item[imgKey]).trim();  // e.g. "center top"
-  }
-  if (Array.isArray(item[arrKey]) && item[arrKey].length >= 2) {
-    const clamp = v => Math.max(0, Math.min(100, Number(v)));
-    const [x, y] = item[arrKey];
-    return `${clamp(x)}% ${clamp(y)}%`;  // e.g. [50,30] -> "50% 30%"
-  }
-  return null;
-}
+      // “焦点”ユーティリティ
+      function resolveFocus(imgKey = 'focus', arrKey = 'focal') {
+        if (item[imgKey] && String(item[imgKey]).trim()) {
+          return String(item[imgKey]).trim();
+        }
+        if (Array.isArray(item[arrKey]) && item[arrKey].length >= 2) {
+          const clamp = v => Math.max(0, Math.min(100, Number(v)));
+          const [x, y] = item[arrKey];
+          return `${clamp(x)}% ${clamp(y)}%`;
+        }
+        return null;
+      }
 
-// 画像（サムネ）の焦点
-const imgFocus = resolveFocus('focus', 'focal');
-if (imgFocus) img.style.objectPosition = imgFocus;
+      const imgFocus = resolveFocus('focus', 'focal');
+      if (imgFocus) img.style.objectPosition = imgFocus;
+      const vidFocus = resolveFocus('focusVideo', 'focalVideo') || imgFocus;
+      if (vidFocus) video.style.objectPosition = vidFocus;
 
-// 動画の焦点（あれば専用、なければ画像と同じ）
-const vidFocus = resolveFocus('focusVideo', 'focalVideo') || imgFocus;
-if (vidFocus) {
-  video.style.objectPosition = vidFocus;
-}
-  if (Array.isArray(item.tags)) {
-    item.tags.forEach(t => {
-      const s = document.createElement('span');
-      s.className = 'tag';
-      s.textContent = t;
-      tags.appendChild(s);
+      if (Array.isArray(item.tags)) {
+        item.tags.forEach(t => {
+          const s = document.createElement('span');
+          s.className = 'tag';
+          s.textContent = t;
+          tags.appendChild(s);
+        });
+      }
+
+      // 種類フラグ
+      const hasVideo = !!(item.video && String(item.video).trim());
+      const hasAudio = !!(item.audio && String(item.audio).trim());
+      const hasLink  = !!(item.url   && String(item.url).trim());
+
+      function setOverlay(kind) {
+        overlay.className = `play-overlay ${kind ? 'is-'+kind : ''}`;
+        const badge = document.createElement('div');
+        badge.className = 'badge';
+        overlay.replaceChildren(badge);
+      }
+
+      function bindOverlayForVideo() {
+        overlay.addEventListener('click', () => {
+          if (video.paused) { pauseOthers(video); video.play(); } else { video.pause(); }
+        });
+        video.addEventListener('play',  () => overlay.classList.add('playing'));
+        video.addEventListener('pause', () => overlay.classList.remove('playing'));
+        video.addEventListener('ended', () => overlay.classList.remove('playing'));
+      }
+      function bindOverlayForAudio() {
+        overlay.addEventListener('click', () => {
+          if (audio.paused) { pauseOthers(audio); audio.play(); } else { audio.pause(); }
+        });
+        audio.addEventListener('play',  () => overlay.classList.add('playing'));
+        audio.addEventListener('pause', () => overlay.classList.remove('playing'));
+        audio.addEventListener('ended', () => overlay.classList.remove('playing'));
+      }
+      function bindOverlayForLink() {
+        overlay.addEventListener('click', () => {
+          window.open(item.url, '_blank', 'noopener');
+        });
+      }
+
+      // ▼ 優先順位：video > audio > link
+      if (hasVideo) {
+        const bust = `?v=${encodeURIComponent(item.title)}`; // ★キャッシュバスター
+        video.hidden = false;
+        video.src = item.video + bust;
+        video.setAttribute('poster', artworkSrc);
+        video.load(); // ★明示的にリロード
+
+        img.hidden = true;
+        btn.hidden = true;
+
+        setOverlay('video');
+        overlay.classList.remove('hidden');
+        bindOverlayForVideo();
+        video.addEventListener('play', () => pauseOthers(video));
+      }
+      else if (hasAudio) {
+        const bust = `?v=${encodeURIComponent(item.title)}`; // ★キャッシュバスター
+        audio.src = item.audio + bust;
+        audio.load(); // ★明示的にリロード
+
+        btn.hidden = true;
+        setOverlay('audio');
+        overlay.classList.remove('hidden');
+        bindOverlayForAudio();
+      }
+      else {
+        btn.hidden = true;
+        if (hasLink) {
+          link.hidden = false; 
+          link.href = item.url; 
+          link.textContent = '外部リンク';
+          setOverlay('link');
+          overlay.classList.remove('hidden');
+          bindOverlayForLink();
+        } else {
+          overlay.classList.add('hidden');
+        }
+      }
+
+      if (hasLink) {
+        link.hidden = false;
+        link.href = item.url;
+        link.textContent = '外部リンク';
+      }
+
+      grid.appendChild(node);
     });
-  }
-
-  // 種類フラグ
-  const hasVideo = !!(item.video && String(item.video).trim());
-  const hasAudio = !!(item.audio && String(item.audio).trim());
-  const hasLink  = !!(item.url   && String(item.url).trim());
-
-  // overlay の内容をセット（種類別バッジ）
-function setOverlay(kind) {
-  overlay.className = `play-overlay ${kind ? 'is-'+kind : ''}`;
-  const badge = document.createElement('div');
-  badge.className = 'badge';
-  // badge.textContent = ... ← 削除！
-  overlay.replaceChildren(badge);
-}
-
-  // クリックで再生/停止・リンク遷移
-  function bindOverlayForVideo() {
-    overlay.addEventListener('click', () => {
-      if (video.paused) { pauseOthers(video); video.play(); } else { video.pause(); }
-    });
-  // video 側
-video.addEventListener('play',  () => overlay.classList.add('playing'));
-video.addEventListener('pause', () => overlay.classList.remove('playing'));
-video.addEventListener('ended', () => overlay.classList.remove('playing'));
-  }
-  function bindOverlayForAudio() {
-    overlay.addEventListener('click', () => {
-      if (audio.paused) { pauseOthers(audio); audio.play(); }
-      else { audio.pause(); }
-    });
-// audio 側
-audio.addEventListener('play',  () => overlay.classList.add('playing'));
-audio.addEventListener('pause', () => overlay.classList.remove('playing'));
-audio.addEventListener('ended', () => overlay.classList.remove('playing'));
-  }
-  function bindOverlayForLink() {
-    overlay.addEventListener('click', () => {
-      window.open(item.url, '_blank', 'noopener');
-    });
-  }
-
-  // ▼▼ 優先順位：video > audio > link
-  if (hasVideo) {
-  video.hidden = false;
-  video.src = item.video;
-
-  // ★ 差し替え：常に artworkSrc を poster に使う
-  // （fallback の sample1.png でも必ず効くようになる）
-  video.setAttribute('poster', artworkSrc);
-
-  // ★ 追加：動画専用 or 共通の焦点を反映
-  const vidFocus = resolveFocus('focusVideo', 'focalVideo') || imgFocus;
-  if (vidFocus) {
-    video.style.objectPosition = vidFocus;
-  }
-
-  img.hidden = true;
-  btn.hidden = true;
-
-  setOverlay('video');           // ▶︎
-  overlay.classList.remove('hidden');
-  bindOverlayForVideo();
-
-  // エラーハンドリング（任意）
-  video.addEventListener('play', () => pauseOthers(video));
-}
- else if (hasAudio) {
-  audio.src = item.audio;
-
-  // ▼ テキストの再生ボタンは使わない（常に隠す）
-  btn.hidden = true;
-
-  // ▼ サムネ中央の種別アイコン（🎧）だけで操作
-  setOverlay('audio');           // 🎧
-  overlay.classList.remove('hidden');
-  bindOverlayForAudio();
-
-  // （btn.addEventListener... や btnテキスト更新は全て削除）
-  }
-  else {
-    // 再生メディアなし
-    btn.hidden = true;
-    if (hasLink) {
-      link.hidden = false; link.href = item.url; link.textContent = '外部リンク';
-      setOverlay('link');         // 🔗
-      overlay.classList.remove('hidden');
-      bindOverlayForLink();
-    } else {
-      // 何もないならオーバーレイ非表示
-      overlay.classList.add('hidden');
-    }
-  }
-
-  // 既存：外部リンクの表示（音声/動画があっても併記でOK）
-  if (hasLink) {
-    link.hidden = false;
-    link.href = item.url;
-    link.textContent = '外部リンク';
-  }
-
-  grid.appendChild(node);
-});
-    
   }
 
   function normalize(s){ return (s||'').toString().toLowerCase(); }
