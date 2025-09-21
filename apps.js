@@ -11,6 +11,7 @@
     });
   }
 
+  // キャッシュバスター（同じURLでもカードごとに一意化）
   function withBust(url, key) {
     try {
       const u = new URL(url, location.href);
@@ -21,10 +22,9 @@
     }
   }
 
-  function resolveFocus(item, imgKey, arrKey) {
-    if (item[imgKey] && String(item[imgKey]).trim()) {
-      return String(item[imgKey]).trim();
-    }
+  // object-position を items.json から反映
+  function resolveFocus(item, strKey, arrKey) {
+    if (item[strKey] && String(item[strKey]).trim()) return String(item[strKey]).trim();
     if (Array.isArray(item[arrKey]) && item[arrKey].length >= 2) {
       const clamp = v => Math.max(0, Math.min(100, Number(v)));
       const [x, y] = item[arrKey];
@@ -58,7 +58,7 @@
 
       const fallback   = 'assets/art/sample1.png';
       const artworkSrc = (item.artwork && item.artwork.trim()) ? item.artwork : fallback;
-      img.src = artworkSrc;
+      img.src = artworkSrc;                         // サムネは即表示（遅延させない）
       img.alt = item.title || 'artwork';
       img.onerror = () => { if (img.src !== fallback) img.src = fallback; };
 
@@ -73,39 +73,42 @@
         tags.innerHTML = item.tags.map(t => `<span class="tag">${t}</span>`).join('');
       }
 
-      // --- 判定 ---
+      // --- 種別判定 ---
       const hasVideo = !!(item.video && String(item.video).trim());
       const hasAudio = !!(item.audio && String(item.audio).trim());
       const hasLink  = !!(item.url   && String(item.url).trim());
 
-      // --- オーバーレイ ---
+      // --- オーバーレイ共通 ---
       function setOverlay(kind) {
         overlay.className = `play-overlay ${kind ? 'is-'+kind : ''}`;
         overlay.innerHTML = `<div class="badge"></div>`;
       }
 
-      // --- 動作 ---
+      // --- 動作（クリックで src を付与 → 再生）---
       if (hasVideo) {
         setOverlay('video');
         overlay.classList.remove('hidden');
+        video.setAttribute('preload', 'none');  // 省電力
+        video.hidden = false;
+        video.setAttribute('poster', artworkSrc);
+
         overlay.onclick = () => {
-          if (!video.src) {
-            video.src = withBust(item.video, idx); // 短いキー
-            video.setAttribute('poster', artworkSrc);
-          }
+          if (!video.src) video.src = withBust(item.video, idx); // 付与は初回のみ
           if (video.paused) { pauseOthers(video); video.play(); } else { video.pause(); }
         };
         video.onplay  = () => overlay.classList.add('playing');
         video.onpause = () => overlay.classList.remove('playing');
         video.onended = () => overlay.classList.remove('playing');
+
+        // サムネとテキストボタンは非表示のまま
       }
       else if (hasAudio) {
         setOverlay('audio');
         overlay.classList.remove('hidden');
+        audio.setAttribute('preload', 'none');
+
         overlay.onclick = () => {
-          if (!audio.src) {
-            audio.src = withBust(item.audio, idx);
-          }
+          if (!audio.src) audio.src = withBust(item.audio, idx);
           if (audio.paused) { pauseOthers(audio); audio.play(); } else { audio.pause(); }
         };
         audio.onplay  = () => overlay.classList.add('playing');
@@ -117,7 +120,7 @@
         overlay.classList.remove('hidden');
         overlay.onclick = () => window.open(item.url, '_blank', 'noopener');
         link.hidden = false;
-        link.href   = item.url;
+        link.href = item.url;
         link.textContent = '外部リンク';
       } else {
         overlay.classList.add('hidden');
@@ -135,7 +138,6 @@
            normalize(item.description).includes(n) ||
            (item.tags || []).some(t => normalize(t).includes(n));
   }
-
   search.addEventListener('input', () => {
     const q = search.value.trim();
     render(q ? items.filter(it => matches(q, it)) : items);
@@ -148,7 +150,7 @@
     items = await res.json();
     render(items);
   } catch (e) {
-    grid.innerHTML = `<p style="color:#c00">items.json を読めませんでした：${String(e)}</p>`;
+    grid.innerHTML = `<p style="color:#c00">items.json を読めませんでした：${String(e)}`;
     console.error('items.json load error', e);
   }
 })();
