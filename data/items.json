@@ -48,7 +48,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Electronica.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Utility.wav",
     "url": "",
-    "tags": ["music","Jazzy hiphop","game"]
+    "tags": ["music","Jazzy hiphop","game","composition"]
   },
   {
     "title": "Webtoon(動画)",
@@ -57,7 +57,7 @@
     "video": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2024_1219_webtoon.mp4",
     "audio": "",
     "url": "",
-    "tags": ["video","foley","sound design","webtoon"]
+    "tags": ["video","foley","sound design","webtoon","composition"]
   },
   {
     "title": "インタラクティブミュージック  （展開1）_DEMO",
@@ -65,7 +65,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Frontiasky.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250922_eden%26me.wav",
     "url": "",
-    "tags": ["music","interactive music","electoronica","game"]
+    "tags": ["music","interactive music","electoronica","game","composition"]
   },
   {
     "title": "インタラクティブミュージック  （展開2）_DEMO",
@@ -73,7 +73,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Frontiasky.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/BossBattle%20%EF%BC%88%E8%B2%A0%E3%81%91%E3%81%9D%E3%81%86%EF%BC%89.wav",
     "url": "",
-    "tags": ["music","interactive music","beat mash","dnb","game"]
+    "tags": ["music","interactive music","beat mash","dnb","game","composition"]
   },
   {
     "title": "Conduct to space",
@@ -105,7 +105,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story2-1.wav",
     "url": "",
-    "tags": ["music","neo soul","hiphop","game"]
+    "tags": ["music","neo soul","hiphop","game","composition"]
   },
   {
     "title": "Scinario mode(remix1)_DEMO",
@@ -113,7 +113,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story2-2.wav",
     "url": "",
-    "tags": ["music","epic","electoronica","remix","game"]
+    "tags": ["music","epic","electoronica","remix","game","composition"]
   },
   {
     "title": "Scinario mode(remix2)_DEMO",
@@ -121,7 +121,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Story.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_BeyondMajorAndMinor_Story.wav",
     "url": "",
-    "tags": ["music","synthsizer","remix","game"]
+    "tags": ["music","synthsizer","remix","game","composition"]
   },
   {
     "title": "Duel of headhunters_DEMO",
@@ -129,7 +129,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Femaledrummer.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/hgok%20battle.mp3%20(Remix)%20(Edit).wav",
     "url": "",
-    "tags": ["music","synthesizer","game"]
+    "tags": ["music","synthesizer","game","composition"]
   },
   {
     "title": "Metal halloween_DEMO",
@@ -137,7 +137,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Halloween.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/BattleParty.wav",
     "url": "",
-    "tags": ["music","Halloween","rock","game"],
+    "tags": ["music","Halloween","rock","game","composition"],
     "focus": "center top"
   },
   {
@@ -146,7 +146,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Stempunkprofessor.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/UBidSum_Theme.wav",
     "url": "",
-    "tags": ["music","ai,generated","electronica","game"]
+    "tags": ["music","ai,generated","electronica","game","composition"]
   },
   {
     "title": "New kings",
@@ -171,7 +171,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Hannya.png",
     "audio": "",
     "url": "https://www.youtube.com/watch?v=GvBK0heudZI",
-    "tags": ["music","Rap","produce"]
+    "tags": ["music","Rap","track making","produce"]
   },
   {
     "title": "Must be on my way",
@@ -187,7 +187,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/MaleSolitude.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250922_MaleVocal_StoryOfUrbansoul_remix.wav",
     "url": "",
-    "tags": ["music","city pop","soul","retro","male vocal expected","game"]
+    "tags": ["music","city pop","soul","retro","composition","male vocal expected","game"]
   },
   {
     "title": "Musium song",
@@ -195,7 +195,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/guitar.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/gutizumduo.wav",
     "url": "",
-    "tags": ["music","jazz","live recording","guitar,duo","featuring"]
+    "tags": ["music","jazz","live recording","guitar,duo","featuring","cover"]
   },
   {
     "title": "某社記念式典用社歌アレンジ",
@@ -216,10 +216,10 @@
   },
   {
     "title": "マクドナルド　ハッピーセット",
-    "description": "2004年の作品です。日本人訛りの英語で学園ビートパンク的なコンセプトを表現いたしました。",
+    "description": "2004年の作品です。日本人訛りの英語歌唱で学園ビートパンク的なコンセプトのもと、若年層の購買意欲を増進させる音源を表現いたしました。",
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Burger.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2004_TVCM_McDonald%E2%80%99s_HappySet.wav",
     "url": "",
-    "tags": ["music","beat punk","tvcm"]
+    "tags": ["music","beat punk","composition","tvcm"]
   }
 ]
