@@ -50,6 +50,14 @@ body {
   object-fit: cover;
   display: block;
 }
+/* 縦型再生用（再生中だけ縦比率に） */
+.card .thumb .video.is-playing-vertical {
+  aspect-ratio: 9 / 16;
+  width: auto;      /* デフォルトの width:100% を上書き */
+  height: 100%;     /* コンテナ高に合わせる（上下は切らない） */
+  max-height: 80vh; /* 画面外に大きくなりすぎない安全策 */
+  object-fit: cover;
+}
 
 /* ========== Meta / Tags / Actions ========== */
 .card .meta { padding: 0.8rem 1rem 0.5rem; }
