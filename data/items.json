@@ -50,6 +50,31 @@
     "url": "",
     "tags": ["music","Jazzy hiphop","game","composition"]
   },
+   {
+    "title": "Duel of headhunters_DEMO",
+    "description": "ハービーハンコックのエレクトリックバンドをネオ化してゲーム音楽としてまとめることを意識いたしました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Femaledrummer.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/hgok%20battle.mp3%20(Remix)%20(Edit).wav",
+    "url": "",
+    "tags": ["music","synthesizer","game","composition"]
+  },
+  {
+    "title": "Metal halloween_DEMO",
+    "description": "突然わちゃわちゃしたハロウィンロックを想定いたしました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Halloween.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/BattleParty.wav",
+    "url": "",
+    "tags": ["music","Halloween","rock","game","composition"],
+    "focus": "center top"
+  },
+  {
+    "title": "トライコア様案件候補曲",
+    "description": "空耳日本語英語を交えた歌詞のリクエストがあり、生成AIで制作いたしました。",
+    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Stempunkprofessor.png",
+    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/UBidSum_Theme.wav",
+    "url": "",
+    "tags": ["music","ai,generated","electronica","game"]
+  },
   {
     "title": "Conduct to space",
     "description": "2025年秋から配信開始予定の三菱重工H3ロケット打ち上げ配信YouTube番組テーマ曲です。",
@@ -74,7 +99,7 @@
     "url": "",
     "tags": ["music","jazz","electronica","game","composition"]
   },
-   {
+  {
     "title": "Webtoon(動画)",
     "description": "音効とBGMを制作いたしました。依頼元の指示によりパブリックドメインのクラシック音源をカバーし、途中挿入しています。",
     "artwork": "",
@@ -122,31 +147,6 @@
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/250909_BeyondMajorAndMinor_Story.wav",
     "url": "",
     "tags": ["music","synthsizer","remix","game","composition"]
-  },
-  {
-    "title": "Duel of headhunters_DEMO",
-    "description": "ハービーハンコックのエレクトリックバンドをネオ化してゲーム音楽としてまとめることを意識いたしました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Femaledrummer.png",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/hgok%20battle.mp3%20(Remix)%20(Edit).wav",
-    "url": "",
-    "tags": ["music","synthesizer","game","composition"]
-  },
-  {
-    "title": "Metal halloween_DEMO",
-    "description": "突然わちゃわちゃしたハロウィンロックを想定いたしました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Halloween.png",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/BattleParty.wav",
-    "url": "",
-    "tags": ["music","Halloween","rock","game","composition"],
-    "focus": "center top"
-  },
-  {
-    "title": "トライコア様案件候補曲",
-    "description": "空耳日本語英語を交えた歌詞のリクエストがあり、生成AIで制作いたしました。",
-    "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Stempunkprofessor.png",
-    "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/UBidSum_Theme.wav",
-    "url": "",
-    "tags": ["music","ai,generated","electronica","game"]
   },
   {
     "title": "New kings",
