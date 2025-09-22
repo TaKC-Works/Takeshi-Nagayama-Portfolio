@@ -118,9 +118,20 @@
     }
   };
 
-  video.onplay  = () => overlay.classList.add('playing');
-  video.onpause = () => overlay.classList.remove('playing');
-  video.onended = () => overlay.classList.remove('playing');
+  video.onplay = () => {
+  overlay.classList.add('playing');
+  video.classList.add('is-playing-vertical');
+};
+
+video.onpause = () => {
+  overlay.classList.remove('playing');
+  video.classList.remove('is-playing-vertical');
+};
+
+video.onended = () => {
+  overlay.classList.remove('playing');
+  video.classList.remove('is-playing-vertical');
+};
 }
 
       else if (hasAudio) {
@@ -186,4 +197,5 @@
     console.error('items.json load error', e);
   }
 })();
+
 
