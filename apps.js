@@ -86,20 +86,35 @@
 
       // --- 動作（クリックで src を付与 → 再生）---
       if (hasVideo) {
-        setOverlay('video');
-        overlay.classList.remove('hidden');
-        video.setAttribute('preload', 'none');  // 省電力
-        video.hidden = false;
-        video.setAttribute('poster', artworkSrc);
+  setOverlay('video');
+  overlay.classList.remove('hidden');
 
-        overlay.onclick = () => {
-          if (!video.src) video.src = withBust(item.video, idx); // 付与は初回のみ
-          if (video.paused) { pauseOthers(video); video.play(); } else { video.pause(); }
-        };
-        video.onplay  = () => overlay.classList.add('playing');
-        video.onpause = () => overlay.classList.remove('playing');
-        video.onended = () => overlay.classList.remove('playing');
+  // 省電力のため preload を抑制、poster は常に表示
+  video.preload = 'none';
+  video.hidden = false;
+  video.poster = artworkSrc;
 
+  // 初回クリックで src を設定 → 以降はそのまま利用
+  overlay.addEventListener('click', () => {
+    if (!video.src) {
+      const key = `${item.title}::${item.video}`; // 一意なキャッシュキー
+      video.src = withBust(item.video, key);
+      video.load();
+    }
+
+    if (video.paused) {
+      pauseOthers(video);
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
+
+  // 再生状態に応じてオーバーレイのクラスを更新
+  video.addEventListener('play',  () => overlay.classList.add('playing'));
+  video.addEventListener('pause', () => overlay.classList.remove('playing'));
+  video.addEventListener('ended', () => overlay.classList.remove('playing'));
+}
         // サムネとテキストボタンは非表示のまま
       }
       else if (hasAudio) {
