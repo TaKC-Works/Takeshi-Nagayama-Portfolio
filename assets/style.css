@@ -223,11 +223,12 @@ body {
 /* 画像は隠して video のみを全面に */
 .card.is-vertical-playing .thumb img { display: none; }
 
-/* 動画は枠いっぱいに拡大＆トリミングでカバー */
+/* 動画は縦長で余白付き、上下欠けなし */
 .card.is-vertical-playing .thumb .video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;   /* contain に変更 */
+  background: #000;      /* 黒背景を追加（余白を自然に見せる） */
 }
 
 /* ========== Responsive ========== */
