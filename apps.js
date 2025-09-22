@@ -92,32 +92,37 @@
 
       // --- 動作バインド ---
       if (hasVideo) {
-        setOverlay(overlay, 'video');
-        overlay.classList.remove('hidden');
-        video.hidden = false;
-        video.poster = artworkSrc;
+  setOverlay(overlay, 'video');
+  overlay.classList.remove('hidden');
 
-        overlay.addEventListener('click', () => {
-          if (!video.src) {
-            const key = `${item.title}::${item.video}`;
-            video.src = withBust(item.video, key);
-            video.load();
-          }
-          if (video.paused) {
-            pauseOthers(video);
-            video.play();
-          } else {
-            video.pause();
-            // 停止時に src を破棄
-            video.removeAttribute('src');
-            video.load();
-          }
-        });
+  // サムネ画像は非表示（video.poster が代わり）
+  img.style.display = 'none';
 
-        video.addEventListener('play',  () => overlay.classList.add('playing'));
-        video.addEventListener('pause', () => overlay.classList.remove('playing'));
-        video.addEventListener('ended', () => overlay.classList.remove('playing'));
-      }
+  video.hidden = false;
+  video.preload = 'metadata';
+  video.poster = artworkSrc;
+
+  overlay.onclick = () => {
+    if (!video.src) {
+      const key = `${item.title}::${item.video}`;
+      video.src = withBust(item.video, key);
+      video.load();
+    }
+    if (video.paused) {
+      pauseOthers(video);
+      video.play().catch(err => console.error("再生エラー:", err));
+    } else {
+      video.pause();
+      // 停止後に src をクリアして軽量化
+      video.removeAttribute('src');
+    }
+  };
+
+  video.onplay  = () => overlay.classList.add('playing');
+  video.onpause = () => overlay.classList.remove('playing');
+  video.onended = () => overlay.classList.remove('playing');
+}
+
       else if (hasAudio) {
         setOverlay(overlay, 'audio');
         overlay.classList.remove('hidden');
@@ -181,3 +186,4 @@
     console.error('items.json load error', e);
   }
 })();
+
