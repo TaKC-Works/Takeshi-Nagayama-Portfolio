@@ -115,6 +115,7 @@
       video.pause();
       // 停止後に src をクリアして軽量化
       video.removeAttribute('src');
+      video.load();  
     }
   };
 
