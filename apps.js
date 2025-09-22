@@ -118,19 +118,25 @@
     }
   };
 
-  video.onplay = () => {
+  // 親の .card を取得
+const cardEl = overlay.closest('.card');
+
+video.onplay = () => {
   overlay.classList.add('playing');
   video.classList.add('is-playing-vertical');
+  if (cardEl) cardEl.classList.add('is-vertical-playing');
 };
 
 video.onpause = () => {
   overlay.classList.remove('playing');
   video.classList.remove('is-playing-vertical');
+  if (cardEl) cardEl.classList.remove('is-vertical-playing');
 };
 
 video.onended = () => {
   overlay.classList.remove('playing');
   video.classList.remove('is-playing-vertical');
+  if (cardEl) cardEl.classList.remove('is-vertical-playing');
 };
 }
 
@@ -197,5 +203,3 @@ video.onended = () => {
     console.error('items.json load error', e);
   }
 })();
-
-
