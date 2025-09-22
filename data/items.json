@@ -146,7 +146,7 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Stempunkprofessor.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/UBidSum_Theme.wav",
     "url": "",
-    "tags": ["music","ai,generated","electronica","game","composition"]
+    "tags": ["music","ai,generated","electronica","game"]
   },
   {
     "title": "New kings",
@@ -220,6 +220,6 @@
     "artwork": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/Burger.png",
     "audio": "https://pub-e556864bb701426aabd81931ffab90c9.r2.dev/2004_TVCM_McDonald%E2%80%99s_HappySet.wav",
     "url": "",
-    "tags": ["music","beat punk","composition","tvcm"]
+    "tags": ["music","beat punk","sound design","tvcm"]
   }
 ]
