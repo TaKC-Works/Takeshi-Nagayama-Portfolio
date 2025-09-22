@@ -50,14 +50,6 @@ body {
   object-fit: cover;
   display: block;
 }
-/* 縦型再生用（再生中だけ縦比率に） */
-.card .thumb .video.is-playing-vertical {
-  aspect-ratio: 9 / 16;
-  width: auto;      /* デフォルトの width:100% を上書き */
-  height: 100%;     /* コンテナ高に合わせる（上下は切らない） */
-  max-height: 80vh; /* 画面外に大きくなりすぎない安全策 */
-  object-fit: cover;
-}
 
 /* ========== Meta / Tags / Actions ========== */
 .card .meta { padding: 0.8rem 1rem 0.5rem; }
@@ -210,6 +202,34 @@ body {
   outline-offset: -3px;
 }
 
+/* ============================= */
+/* ＝ 縦長モード（再生中のみ有効）＝ */
+/* ============================= */
+
+/* カードを“縦長モード”に。必要なら横幅いっぱい＆中央寄せ */
+.card.is-vertical-playing {
+  grid-column: 1 / -1;      /* グリッドを横断（任意） */
+  max-width: 720px;          /* TikTokっぽい幅。お好みで */
+  margin-inline: auto;       /* 中央寄せ */
+}
+
+/* サムネ枠を16:9 -> ほぼ全画面の縦長へ */
+.card.is-vertical-playing .thumb {
+  aspect-ratio: auto;        /* 固定比率を解除 */
+  height: min(85vh, 100svh); /* 画面の8〜9割まで引き伸ばす */
+  overflow: hidden;
+}
+
+/* 画像は隠して video のみを全面に */
+.card.is-vertical-playing .thumb img { display: none; }
+
+/* 動画は枠いっぱいに拡大＆トリミングでカバー */
+.card.is-vertical-playing .thumb .video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* ========== Responsive ========== */
 @media (max-width: 600px) {
   .grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
@@ -234,4 +254,8 @@ body {
     --bar-h: 12px;
     --bar-gap: 6px;
   }
+
+  /* モバイルでの縦長モード強化 */
+  .card.is-vertical-playing { max-width: none; }             /* 端から端まで */
+  .card.is-vertical-playing .thumb { height: min(92vh, 100svh); }
 }
