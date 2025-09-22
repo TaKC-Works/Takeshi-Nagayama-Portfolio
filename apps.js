@@ -4,14 +4,22 @@
   const search = document.getElementById('search');
   const tpl    = document.getElementById('card-template');
 
+  let items = [];
+
   // ===== 共通ヘルパー =====
   function pauseOthers(current) {
     document.querySelectorAll('audio, video').forEach(m => {
-      if (m !== current && !m.paused) m.pause();
+      if (m !== current && !m.paused) {
+        m.pause();
+        // ★ 停止時に src を破棄して発熱を防ぐ
+        if (m.tagName === 'VIDEO' || m.tagName === 'AUDIO') {
+          m.removeAttribute('src');
+          try { m.load(); } catch {}
+        }
+      }
     });
   }
 
-  // キャッシュバスター（同じURLでもカードごとに一意化）
   function withBust(url, key) {
     try {
       const u = new URL(url, location.href);
@@ -22,7 +30,6 @@
     }
   }
 
-  // object-position を items.json から反映
   function resolveFocus(item, strKey, arrKey) {
     if (item[strKey] && String(item[strKey]).trim()) return String(item[strKey]).trim();
     if (Array.isArray(item[arrKey]) && item[arrKey].length >= 2) {
@@ -31,6 +38,11 @@
       return `${clamp(x)}% ${clamp(y)}%`;
     }
     return null;
+  }
+
+  function setOverlay(overlay, kind) {
+    overlay.className = `play-overlay ${kind ? 'is-'+kind : ''}`;
+    overlay.innerHTML = `<div class="badge"></div>`;
   }
 
   // ===== レンダリング =====
@@ -58,7 +70,7 @@
 
       const fallback   = 'assets/art/sample1.png';
       const artworkSrc = (item.artwork && item.artwork.trim()) ? item.artwork : fallback;
-      img.src = artworkSrc;                         // サムネは即表示（遅延させない）
+      img.src = artworkSrc;
       img.alt = item.title || 'artwork';
       img.onerror = () => { if (img.src !== fallback) img.src = fallback; };
 
@@ -69,7 +81,7 @@
       if (vidFocus) video.style.objectPosition = vidFocus;
 
       // --- タグ ---
-      if (item.tags && item.tags.length) {
+      if (item.tags?.length) {
         tags.innerHTML = item.tags.map(t => `<span class="tag">${t}</span>`).join('');
       }
 
@@ -78,62 +90,62 @@
       const hasAudio = !!(item.audio && String(item.audio).trim());
       const hasLink  = !!(item.url   && String(item.url).trim());
 
-      // --- オーバーレイ共通 ---
-      function setOverlay(kind) {
-        overlay.className = `play-overlay ${kind ? 'is-'+kind : ''}`;
-        overlay.innerHTML = `<div class="badge"></div>`;
-      }
-
-      // --- 動作（クリックで src を付与 → 再生）---
+      // --- 動作バインド ---
       if (hasVideo) {
-  setOverlay('video');
-  overlay.classList.remove('hidden');
+        setOverlay(overlay, 'video');
+        overlay.classList.remove('hidden');
+        video.hidden = false;
+        video.poster = artworkSrc;
 
-  // 省電力のため preload を抑制、poster は常に表示
-  video.preload = 'none';
-  video.hidden = false;
-  video.poster = artworkSrc;
+        overlay.addEventListener('click', () => {
+          if (!video.src) {
+            const key = `${item.title}::${item.video}`;
+            video.src = withBust(item.video, key);
+            video.load();
+          }
+          if (video.paused) {
+            pauseOthers(video);
+            video.play();
+          } else {
+            video.pause();
+            // 停止時に src を破棄
+            video.removeAttribute('src');
+            video.load();
+          }
+        });
 
-  // 初回クリックで src を設定 → 以降はそのまま利用
-  overlay.addEventListener('click', () => {
-    if (!video.src) {
-      const key = `${item.title}::${item.video}`; // 一意なキャッシュキー
-      video.src = withBust(item.video, key);
-      video.load();
-    }
-
-    if (video.paused) {
-      pauseOthers(video);
-      video.play();
-    } else {
-      video.pause();
-    }
-  });
-
-  // 再生状態に応じてオーバーレイのクラスを更新
-  video.addEventListener('play',  () => overlay.classList.add('playing'));
-  video.addEventListener('pause', () => overlay.classList.remove('playing'));
-  video.addEventListener('ended', () => overlay.classList.remove('playing'));
-}
-        // サムネとテキストボタンは非表示のまま
+        video.addEventListener('play',  () => overlay.classList.add('playing'));
+        video.addEventListener('pause', () => overlay.classList.remove('playing'));
+        video.addEventListener('ended', () => overlay.classList.remove('playing'));
       }
       else if (hasAudio) {
-        setOverlay('audio');
+        setOverlay(overlay, 'audio');
         overlay.classList.remove('hidden');
-        audio.setAttribute('preload', 'none');
 
-        overlay.onclick = () => {
-          if (!audio.src) audio.src = withBust(item.audio, idx);
-          if (audio.paused) { pauseOthers(audio); audio.play(); } else { audio.pause(); }
-        };
-        audio.onplay  = () => overlay.classList.add('playing');
-        audio.onpause = () => overlay.classList.remove('playing');
-        audio.onended = () => overlay.classList.remove('playing');
+        overlay.addEventListener('click', () => {
+          if (!audio.src) {
+            const key = `${item.title}::${item.audio}`;
+            audio.src = withBust(item.audio, key);
+            audio.load();
+          }
+          if (audio.paused) {
+            pauseOthers(audio);
+            audio.play();
+          } else {
+            audio.pause();
+            audio.removeAttribute('src');
+            audio.load();
+          }
+        });
+
+        audio.addEventListener('play',  () => overlay.classList.add('playing'));
+        audio.addEventListener('pause', () => overlay.classList.remove('playing'));
+        audio.addEventListener('ended', () => overlay.classList.remove('playing'));
       }
       else if (hasLink) {
-        setOverlay('link');
+        setOverlay(overlay, 'link');
         overlay.classList.remove('hidden');
-        overlay.onclick = () => window.open(item.url, '_blank', 'noopener');
+        overlay.addEventListener('click', () => window.open(item.url, '_blank', 'noopener'));
         link.hidden = false;
         link.href = item.url;
         link.textContent = '外部リンク';
@@ -153,19 +165,19 @@
            normalize(item.description).includes(n) ||
            (item.tags || []).some(t => normalize(t).includes(n));
   }
+
   search.addEventListener('input', () => {
     const q = search.value.trim();
     render(q ? items.filter(it => matches(q, it)) : items);
   });
 
   // ===== 初期ロード =====
-  let items = [];
   try {
     const res = await fetch('data/items.json', { cache: 'no-store' });
     items = await res.json();
     render(items);
   } catch (e) {
-    grid.innerHTML = `<p style="color:#c00">items.json を読めませんでした：${String(e)}`;
+    grid.innerHTML = `<p style="color:#c00">items.json を読めませんでした：${String(e)}</p>`;
     console.error('items.json load error', e);
   }
 })();
