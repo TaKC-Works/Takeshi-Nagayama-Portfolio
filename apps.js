@@ -19,7 +19,21 @@
       }
     });
   }
+　
+  // ★ 再生アイコン状態を常に同期するヘルパー
+function bindOverlayState(media, overlay) {
+  const set = () => {
+    const isPlaying = !(media.paused || media.ended);
+    overlay.classList.toggle('playing', isPlaying);
+  };
+  
+  // 再生状態に影響する主要イベントをすべて拾う
+  ['play','playing','pause','ended','waiting','seeking',
+   'stalled','suspend','abort','emptied','error','loadstart'
+  ].forEach(ev => media.addEventListener(ev, set));
 
+  set(); // 初期同期
+}
   function withBust(url, key) {
     try {
       const u = new URL(url, location.href);
@@ -90,17 +104,19 @@
       const hasAudio = !!(item.audio && String(item.audio).trim());
       const hasLink  = !!(item.url   && String(item.url).trim());
 
-      // --- 動作バインド ---
       if (hasVideo) {
   setOverlay(overlay, 'video');
   overlay.classList.remove('hidden');
 
-  // サムネ画像は非表示（video.poster が代わり）
+  // サムネは隠し、video を主役に
   img.style.display = 'none';
-
   video.hidden = false;
   video.preload = 'metadata';
-  video.poster = artworkSrc;
+  video.poster  = artworkSrc;
+video.playsInline = true;          // ★ 追加（iOS対策）
+        
+  // 状態同期（←これがポイント）
+  bindOverlayState(video, overlay);
 
   overlay.onclick = () => {
     if (!video.src) {
@@ -110,61 +126,66 @@
     }
     if (video.paused) {
       pauseOthers(video);
-      video.play().catch(err => console.error("再生エラー:", err));
+      video.play().catch(err => console.error('再生エラー:', err));
     } else {
       video.pause();
-      // 停止後に src をクリアして軽量化
-      video.removeAttribute('src');
-      video.load();  
+      // src クリアはイベントが流れた後に行うと安全
+      setTimeout(() => {
+        video.removeAttribute('src');
+        try { video.load(); } catch {}
+      }, 0);
     }
+    // クリック後に状態を再同期（イベント順序対策）
+    requestAnimationFrame(() => {
+      const isPlaying = !(video.paused || video.ended);
+      overlay.classList.toggle('playing', isPlaying);
+    });
   };
 
-  // 親の .card を取得
-const cardEl = overlay.closest('.card');
-
-video.onplay = () => {
-  overlay.classList.add('playing');
-  video.classList.add('is-playing-vertical');
-  if (cardEl) cardEl.classList.add('is-vertical-playing');
-};
-
-video.onpause = () => {
-  overlay.classList.remove('playing');
-  video.classList.remove('is-playing-vertical');
-  if (cardEl) cardEl.classList.remove('is-vertical-playing');
-};
-
-video.onended = () => {
-  overlay.classList.remove('playing');
-  video.classList.remove('is-playing-vertical');
-  if (cardEl) cardEl.classList.remove('is-vertical-playing');
-};
+  // ★ 縦長レイアウト切替（必要なら維持）
+  const cardEl = overlay.closest('.card');
+  video.addEventListener('play',  () => {
+    video.classList.add('is-playing-vertical');
+    if (cardEl) cardEl.classList.add('is-vertical-playing');
+  });
+  const removeVertical = () => {
+    video.classList.remove('is-playing-vertical');
+    if (cardEl) cardEl.classList.remove('is-vertical-playing');
+  };
+  video.addEventListener('pause',  removeVertical);
+  video.addEventListener('ended',  removeVertical);
+  video.addEventListener('emptied', removeVertical);
 }
+        else if (hasAudio) {
+  setOverlay(overlay, 'audio');
+  overlay.classList.remove('hidden');
 
-      else if (hasAudio) {
-        setOverlay(overlay, 'audio');
-        overlay.classList.remove('hidden');
+  // 再生アイコン状態を同期
+  bindOverlayState(audio, overlay);
 
-        overlay.addEventListener('click', () => {
-          if (!audio.src) {
-            const key = `${item.title}::${item.audio}`;
-            audio.src = withBust(item.audio, key);
-            audio.load();
-          }
-          if (audio.paused) {
-            pauseOthers(audio);
-            audio.play();
-          } else {
-            audio.pause();
-            audio.removeAttribute('src');
-            audio.load();
-          }
-        });
-
-        audio.addEventListener('play',  () => overlay.classList.add('playing'));
-        audio.addEventListener('pause', () => overlay.classList.remove('playing'));
-        audio.addEventListener('ended', () => overlay.classList.remove('playing'));
-      }
+  overlay.onclick = () => {
+    if (!audio.src) {
+      const key = `${item.title}::${item.audio}`;
+      audio.src = withBust(item.audio, key);
+      audio.load();
+    }
+    if (audio.paused) {
+      pauseOthers(audio);
+      audio.play().catch(err => console.error('再生エラー:', err));
+    } else {
+      audio.pause();
+      // src クリアは次フレームで安全に
+      setTimeout(() => {
+        audio.removeAttribute('src');
+        try { audio.load(); } catch {}
+      }, 0);
+    }
+    requestAnimationFrame(() => {
+      const isPlaying = !(audio.paused || audio.ended);
+      overlay.classList.toggle('playing', isPlaying);
+    });
+  };
+}
       else if (hasLink) {
         setOverlay(overlay, 'link');
         overlay.classList.remove('hidden');
